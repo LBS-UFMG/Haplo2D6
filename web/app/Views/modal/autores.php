@@ -7,7 +7,13 @@
       <div class="modal-header bg-light">
         <div class="text-center">
           <img width="150" class="me-3" src="<?php echo filtra_url(base_url('/img/logo_v5.svg')); ?>">
-          
+
+          <p class="text-muted">
+          Haplo2D6 is a specialized bioinformatics tool designed to predict star alleles (haplotypes) within the CYP2D6 gene by analyzing genotyping data, including SNPs and deletions. It offers an efficient and concise solution for researchers and clinicians studying the polymorphic nature of CYP2D6.
+CYP2D6 is a crucial enzyme responsible for the metabolism of 25% of prescribed medications, with a highly polymorphic nature. Haplo2D6 addresses this complexity, providing a targeted approach to haplotype and enzyme activity prediction.
+Using advanced algorithms, Haplo2D6 predicts the star allele and the enzyme activity of CYP2D6, streamlining the analysis process. Its quick and reliable prediction of star alleles facilitates a better understanding of the genetic variations within CYP2D6.
+Haplo2D6, as the name suggests, draws its inspiration from the term "haplotype", representing a combination of alleles within adjacent loci on the same chromosome, typically inherited as a unit. The "2D6" component references the CYP2D6 enzyme, a member of the cytochrome P450 superfamily encoded by the gene situated in the Cytochrome P450 Family 2 Subfamily D Member 6.
+</p>
         </div>
         <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>

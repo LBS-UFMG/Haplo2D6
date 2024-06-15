@@ -4,4 +4,4 @@ Octávio
 Taís Nóbrega de Sousa
 
 # Backend / Frontend development
-Diego Mariano
+Diego Mariano (supervision: Prof. Dr. Raquel Cardoso de Melo Minardi)

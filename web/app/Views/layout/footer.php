@@ -1,6 +1,36 @@
-<footer>
-  <hr class="mb-1">
-  <p class="small text-muted text-center me-2 mb-0">© 2022-<?=date('Y')?> | Haplelo v0.2 - Developed by <a href="#" data-bs-toggle="modal" data-bs-target="#about" class="link-dark">LBS-UFMG</a>.</p>
+<footer class=" bg-dark text-light py-5 ">
+    <div class="row px-4">
+        <div class="col-2"><a href="#">
+            <img src="<?= filtra_url(base_url('/img/1.png')) ?>" style="height:100px">
+        </a></div>
+        <div class="col-2"> <a href="#">
+            <img src="<?= filtra_url(base_url('/img/3.png')) ?>" style="height:100px">
+          </a></div>
+
+      
+  
+        <div class="col-2"><a href="#">
+            <img src="<?= filtra_url(base_url('/img/dcc_w.svg')) ?>" style="height:90px">
+          </a></div>
+        <div class="col-2"><a href="#">
+              <img src="<?= filtra_url(base_url('/img/ufmg_w.svg')) ?>" style="height:85px">
+          </a></div>
+
+          <div class="col-2 ps-5 ms-5"><a href="#">
+            <img src="<?= filtra_url(base_url('/img/2.png')) ?>" style="height:100px">
+          </a></div>
+
+      </div>
+    </div>
+
+    <div class="px-4 d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-secondary">
+      <p class="px-4">© 2022-<?=date('Y')?> | Haplelo v0.3 - Developed by <a href="#" data-bs-toggle="modal" data-bs-target="#about" class="link-light">LBS-UFMG</a>.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
@@ -19,6 +49,6 @@
   <?= $this->renderSection('scripts') ?> 
   <!-- FIM Scripts -->
 
-  </footer>
+</footer>
 </body>
 </html>

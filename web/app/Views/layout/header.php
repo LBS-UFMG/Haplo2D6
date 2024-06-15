@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php 
     if(isset($titulo)){ 
-      echo $titulo.' | Haplelo'; 
+      echo $titulo.' | Haplo2D6'; 
     }else{ 
-      echo 'Haplelo'; 
+      echo 'Haplo2D6'; 
     }
   ?></title>
 
@@ -32,12 +32,12 @@
 <body>
   <header>
 
-    <nav class="navbar navbar-expand-md bg-body-tertiary py-0">
+    <nav class="navbar navbar-expand-md bg-body-tertiary py-0 bg-light">
       <div class="container-fluid">
 
         <!-- logo -->
         <a href="<?= base_url() ?>" title="Home" class="navbar-brand">
-          <img src="<?= filtra_url(base_url('/img/logo_v5.svg')) ?>" style="max-width:200px" class="me-3">
+          <img src="<?= filtra_url(base_url('/img/logo_v5.svg')) ?>" style="width:200px" class="me-3">
         </a><!-- /logo -->
 
         <!-- menu sanduíche -->
@@ -51,9 +51,12 @@
 
           <!-- menu -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li><a href="<?= base_url('/') ?>" class="nav-link px-3 link-secondary"><span>Try now</span></a></li>
-            <li><a href="<?= base_url('/index.php/example') ?>" class="nav-link px-3 link-secondary"><span>Example</span></a></li>
             <li><a href="#" class="nav-link px-3 link-secondary" data-bs-target="#about" data-bs-toggle="modal"><span>About</span></a></li>
+            
+            <li><a href="<?= base_url('/index.php/documentation') ?>" class="nav-link px-3 link-secondary"><span>Documentation</span></a></li>
+            <li><a href="<?= base_url('/index.php/example') ?>" class="nav-link px-3 link-secondary"><span>Example</span></a></li>
+            <li><a href="<?= base_url('/#try') ?>" class="nav-link px-3 link-secondary"><span><strong>Try now</strong></span></a></li>
+            
           </ul><!-- /menu -->
 
           <!-- buscar  -->

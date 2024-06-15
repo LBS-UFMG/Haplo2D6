@@ -45,3 +45,7 @@ li .dropdown-menu {
 #coluna-detalhes{
     min-height: 800px;
 }
+
+.btn-success{
+    --bs-btn-bg: #10756f !important;
+}

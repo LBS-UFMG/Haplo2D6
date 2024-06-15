@@ -13,4 +13,8 @@ class Home extends BaseController
     public function entrada(){
         return view('home');
     }
+
+    public function documentation(){
+        return view('documentation');
+    }
 }

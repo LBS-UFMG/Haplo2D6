@@ -1,0 +1,98 @@
+30
+9
+SSSSSSSSS
+0 067
+G G G C C C C C C 
+G A G C C C T G C 
+0 068
+A G G T C C T C C 
+G G G C C G C C C 
+0 069
+G G G C C C T C C 
+G G G C C G C G C 
+0 070
+G G G C C C C G C 
+A G G T C C C C C 
+0 071
+A G G C C C C G C 
+G G G T C C C C C 
+0 072
+G G A C C C T C C 
+G G G C C C T C C 
+0 073
+G G G C C G T C C 
+G G G C C G T C C 
+0 075
+G G G C T G T C C 
+G G G C C C T C C 
+0 076
+G G G C C C T C C 
+G G G C C G C G C 
+0 078
+G G G C C C C G C 
+G G G C C C C G C 
+0 079
+G G G C C G T C C 
+G G G C C G T C C 
+0 080
+G G G C C C C G C 
+G G G C C C C G C 
+0 081
+G G G C T C T C C 
+G G G C C C T C C 
+0 082
+G G G C C C T C C 
+G G G C C G C G C 
+0 083
+G G G C T C T C C 
+G G G T C C C C C 
+0 084
+A G G C C C C C C 
+G G G T C C C G C 
+0 085
+G G G C C C C G C 
+G G G C C C C G C 
+0 086
+G G G C C C C G C 
+G G G C C C C G C 
+0 088
+G G G T C C C G A 
+G G G C C C C G C 
+0 089
+G G G T C G T C C 
+A G G C C C C C C 
+0 090
+G G G C C C C G C 
+G G G C C C C G C 
+0 092
+G G G C C G C G C 
+G G G C C C T C C 
+0 093
+A G G T C C C C C 
+A G G T C C C C C 
+0 094
+G G G C C C C G C 
+G G G T C C C C C 
+0 096
+G G G T C C C C C 
+A G G C C C C G A 
+0 097
+G G G C C G T C C 
+G G G C C G T C C 
+0 098
+G G G C C G T C C 
+G G G C C G T C C 
+0 101
+G G G T C C C C C 
+A G G C C G T C C 
+0 102
+G G G C C C C C C 
+G G G C C C T G C 
+0 103
+G G G C C C C C C 
+G G G C C C T G C 
+Resolving with method S
+Method = S
+Method = S
+Method = S
+Performing Final Set of Iterations... nearly there!

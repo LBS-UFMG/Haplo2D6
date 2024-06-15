@@ -1,0 +1,47 @@
+/* Usado nas tabelas do Datatables */
+table.dataTable thead th{ 
+    text-align: center !important; 
+    padding: 5px !important;  
+    padding-right:16px !important; 
+}
+
+table.dataTable tbody td{ 
+    padding: 2px 5px !important
+}
+table.dataTable{
+    max-width: 100%;
+}
+/* Usando no filtros.php */
+li .dropdown-menu {
+    text-overflow: ellipsis;
+    /* will make [...] at the end */
+    max-width: 100%;
+    /* change to your preferences */
+    white-space: nowrap;
+    /* paragraph to one line */
+    overflow: hidden;
+    /* older browsers */
+}
+
+.cor-irregularidade { filter: hue-rotate(140deg); }
+
+.w130px{
+    min-width: 130px !important;
+}
+
+#participantes{
+    height: 600px;
+    overflow: scroll;
+}
+
+#lista-trilhas{
+    list-style: none;
+}
+
+#lista-trilhas li{
+    margin-left: -25px;
+}
+
+#coluna-detalhes{
+    min-height: 800px;
+}

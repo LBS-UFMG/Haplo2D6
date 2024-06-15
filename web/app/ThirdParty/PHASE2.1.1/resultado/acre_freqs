@@ -1,0 +1,16 @@
+     index  haplotype     E(freq)         S.E
+         1   GGGCCCCGC    0.355874    0.015396
+         2   GGGCCCCGA    0.018868    0.012994
+         3   GGGCCCTCC    0.075311    0.008775
+         4   GGGCCGTCC    0.266364    0.002290
+         5   GGGCTCTCC    0.049648    0.002429
+         6   GGGCTGTCC    0.000175    0.001700
+         7   GGGTCCCGC    0.007452    0.008400
+         8   GGGTCCCGA    0.009489    0.008662
+         9   GGGTCCCCC    0.033230    0.002567
+        10   GGACCCTCC    0.016667    0.000000
+        11   GAGCCCCGC    0.008235    0.008333
+        12   GAGCCCTCC    0.008431    0.008333
+        13   AGGCCCCCC    0.000214    0.001885
+        14   AGGTCCCCC    0.144620    0.007943
+        15   AGGTCCCCA    0.004960    0.007620

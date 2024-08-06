@@ -16,3 +16,5 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+machine_learning/.DS_Store
+machine_learning/.DS_Store

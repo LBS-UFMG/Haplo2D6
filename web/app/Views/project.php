@@ -110,6 +110,244 @@
     </div>
     
 
+    <!-- gráficos -->
+<div class="container">
+    <div class="row py-5">
+        <div class="col">
+            <h2>Frequency of Haplotypes</h2>
+            <canvas id="g1" style="max-width: auto"></canvas>
+        </div>
+        <div class="col">
+            <h2>Frequency of Enzymatic Acitity</h2>
+            <canvas id="g2" style="max-width: auto"></canvas>
+        </div>
+    </div>
+    <div class="row pb-5">
+        <div class="col">
+            <h2>Frequency of Phenotype</h2>
+            <canvas id="g3" style="max-width: auto"></canvas>
+        </div>
+        <div class="col">
+            <h2>Frequency of total score</h2>
+            <canvas id="g4" style="max-width: auto"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+<script>
+    // Leitura do CSV e criação do gráfico
+    Papa.parse('<?=filtra_url(base_url("/data/$id/halelos.csv"))?>', {
+        download: true,
+        complete: function(results) {
+            const labels = [];
+            const data = [];
+
+            // Itera pelos resultados para extrair os dados
+            results.data.forEach((row, index) => {
+                if (index > 0 && row.length === 3) { // Ignora o cabeçalho e verifica o comprimento correto da linha
+                    labels.push(row[1]);
+                    data.push(parseFloat(row[2]));
+                }
+            });
+
+            // Configuração do gráfico
+            const ctx = document.getElementById('g1').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Values',
+                        data: data,
+                        backgroundColor: 'rgba(75, 192, 192)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Isto transforma o gráfico de barras em horizontal
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<script>
+    // Função para contar a frequência dos haplótipos
+    function countHaplotypes(data, column) {
+        const counts = {};
+        data.forEach(row => {
+            const haplotype = row[column];
+            if (haplotype) {
+                counts[haplotype] = (counts[haplotype] || 0) + 1;
+            }
+        });
+        return counts;
+    }
+
+    // Leitura do CSV e criação do gráfico
+    Papa.parse('<?=filtra_url(base_url("/data/$id/final.csv"))?>', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            const data2 = results.data;
+
+            // Contar a frequência dos haplótipos
+            const haplotype1Counts = countHaplotypes(data2, '1_enzymatic_activity');
+            const haplotype2Counts = countHaplotypes(data2, '2_enzymatic_activity');
+
+            // Combinar os haplótipos e suas frequências
+            const allHaplotypes = {};
+            for (const haplotype in haplotype1Counts) {
+                allHaplotypes[haplotype] = (allHaplotypes[haplotype] || 0) + haplotype1Counts[haplotype];
+            }
+            for (const haplotype in haplotype2Counts) {
+                allHaplotypes[haplotype] = (allHaplotypes[haplotype] || 0) + haplotype2Counts[haplotype];
+            }
+
+            // Preparar dados para o gráfico
+            const labels = Object.keys(allHaplotypes);
+            const values = Object.values(allHaplotypes);
+
+            // Configuração do gráfico
+            const ctx2 = document.getElementById('g2').getContext('2d');
+            const haplotypeChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Frequency',
+                        data: values,
+                        backgroundColor: 'rgba(100, 100, 192)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Isto transforma o gráfico de barras em horizontal
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<script>
+    // Função para contar a frequência dos fenótipos
+    function countPhenotypes(data) {
+        const counts = {};
+        data.forEach(row => {
+            const phenotype = row['phenotype'];
+            if (phenotype) {
+                counts[phenotype] = (counts[phenotype] || 0) + 1;
+            }
+        });
+        return counts;
+    }
+
+    // Leitura do CSV e criação do gráfico
+    Papa.parse('<?=filtra_url(base_url("/data/$id/final.csv"))?>', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            const data = results.data;
+
+            // Contar a frequência dos fenótipos
+            const phenotypeCounts = countPhenotypes(data);
+
+            // Preparar dados para o gráfico
+            const labels = Object.keys(phenotypeCounts);
+            const values = Object.values(phenotypeCounts);
+
+            // Configuração do gráfico
+            const ctx = document.getElementById('g3').getContext('2d');
+            const phenotypeChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Frequency',
+                        data: values,
+                        backgroundColor: 'rgba(75, 192, 100)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+<script>
+    // Função para contar a frequência dos valores de total_score
+    function countTotalScores(data) {
+        const counts = {};
+        data.forEach(row => {
+            const totalScore = row['total_score'];
+            if (totalScore) {
+                counts[totalScore] = (counts[totalScore] || 0) + 1;
+            }
+        });
+        return counts;
+    }
+
+    // Leitura do CSV e criação do gráfico
+    Papa.parse('<?=filtra_url(base_url("/data/$id/final.csv"))?>', {
+        download: true,
+        header: true,
+        complete: function(results) {
+            const data = results.data;
+
+            // Contar a frequência dos valores de total_score
+            const totalScoreCounts = countTotalScores(data);
+
+            // Preparar dados para o gráfico
+            const labels = Object.keys(totalScoreCounts);
+            const values = Object.values(totalScoreCounts);
+
+            // Configuração do gráfico
+            const ctx = document.getElementById('g4').getContext('2d');
+            const totalScoreChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Frequency',
+                        data: values,
+                        backgroundColor: 'rgba(75, 100, 100)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+<!-- fim/gráficos -->
+
 <?php endif; ?>
 
 <script>

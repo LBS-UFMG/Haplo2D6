@@ -35,7 +35,7 @@
       </div>
       <div class="col">
         <p class="text-muted mt-2 mb-2">or submit the "inp file" here (<a href="/input/input.inp" target="_blank">download an example file</a>):</p>
-        <input type="file" name="input">
+        <input type="file" name="input_file">
       </div>
     </div>
 
@@ -78,21 +78,21 @@
               <div class="row">
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="noi" placeholder="Number of iterations (default: 400000)">
+                    <input type="number" class="form-control" id="noi" placeholder="Number of iterations (default: 400000)" disabled>
                     <label for="noi">Number of iterations (default: 400000)</label>
                   </div>
                 </div>
 
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="ti" placeholder="Thinning interval (default 1000)">
+                    <input type="number" class="form-control" id="ti" placeholder="Thinning interval (default 1000)" disabled>
                     <label for="ti">Thinning interval (default 1000)</label>
                   </div>
                 </div>
 
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="bi" placeholder="Burn-in (default 50000)">
+                    <input type="number" class="form-control" id="bi" placeholder="Burn-in (default 50000)" disabled>
                     <label for="bi">Burn-in (default 50000)</label>
                   </div>
                 </div>

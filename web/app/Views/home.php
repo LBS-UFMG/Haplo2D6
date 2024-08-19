@@ -27,16 +27,19 @@
   <div class="row bg-light mt-5 px-2" id="try">
   <h2 class="mt-4 pt-4 pb-3 text-muted mb-2">Run Haplo2D6</h2>
 
-  <form action="<?= base_url('run') ?>" method="post">
+  <form action="<?= base_url('index.php/run') ?>" method="post">
     <label class="badge bg-dark mb-1">Try now:</label>
     <div class="row">
       <div class="col">
+        <label class="badge bg-success mb-1">A</label> <strong class="text-">Genotype data</strong>
         <textarea class="form-control" placeholder="Insert the input here..." rows="5" name="input"></textarea>
+        <p class="text-muted mt-2 mb-2">Paste an "inp file" here (<a href="<?=base_url('/input/input.inp')?>" target="_blank">download an example file</a>).</p>
       </div>
       <div class="col">
-        <p class="text-muted mt-2 mb-2">or submit the "inp file" here (<a href="/input/input.inp" target="_blank">download an example file</a>):</p>
-        <input type="file" name="input_file">
-      </div>
+        <label class="badge bg-primary mb-1">B</label> <strong class="text-">Allele reference table</strong>
+        <textarea class="form-control" placeholder="Insert the reference here..." rows="5" name="model"></textarea>
+        <p class="text-muted mt-2 mb-2">Paste a "tabular reference file" here (<a href="<?=base_url('/input/model.csv')?>" target="_blank">download an example file</a>).</p>
+        </div>
     </div>
 
     <div class="accordion accordion-flush mt-2" id="pmt">
@@ -46,26 +49,8 @@
             Set parameters (advanced)
           </button>
         </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapsed" data-bs-parent="#pmt">
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#pmt">
           <div class="accordion-body bg-light">
-            <div class="mb-4">
-              <p><strong>SNPs evaluated:</strong></p>
-              <input type="checkbox" class="ms-1" checked disabled><span class="ms-2 text-muted">rs3892097</span>
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs28371725</span>
-
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs59421388</span>
-
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs1065852</span>
-
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs28371706</span>
-
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs1080985</span>
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs16947</span>
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs1135840</span>
-              <input type="checkbox" class="ms-5" checked disabled><span class="ms-2 text-muted">rs5030656</span>
-
-            </div>
-
             <div>
               <p><strong>Input format:</strong></p>
               <input type="radio" checked><span class="ms-2">Tabular</span>
@@ -78,22 +63,22 @@
               <div class="row">
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="noi" placeholder="Number of iterations (default: 400000)" disabled>
-                    <label for="noi">Number of iterations (default: 400000)</label>
+                    <input type="number" class="form-control" name="noi" id="noi" placeholder="Number of iterations (default: 100)" disabled>
+                    <label for="noi">Number of iterations (default: 100)</label>
                   </div>
                 </div>
 
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="ti" placeholder="Thinning interval (default 1000)" disabled>
-                    <label for="ti">Thinning interval (default 1000)</label>
+                    <input type="number" class="form-control" name="ti" id="ti" placeholder="Thinning interval (default 1)" disabled>
+                    <label for="ti">Thinning interval (default 1)</label>
                   </div>
                 </div>
 
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="bi" placeholder="Burn-in (default 50000)" disabled>
-                    <label for="bi">Burn-in (default 50000)</label>
+                    <input type="number" class="form-control" name="bi" id="bi" placeholder="Burn-in (default 100)" disabled>
+                    <label for="bi">Burn-in (default 100)</label>
                   </div>
                 </div>
               </div>

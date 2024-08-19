@@ -25,12 +25,12 @@
                         <th>Haplotype #1</th>
                         <th>Enzymatic activity #1</th>
                         <th>Allele #1</th>
-                        <th>Score #1</th>
+                        <th>Activity Score #1</th>
                         <th>Haplotype #2</th>
                         <th>Enzymatic activity #2</th>
                         <th>Allele #2</th>
-                        <th>Score #2</th>
-                        <th>Total Score</th>
+                        <th>Activity Score #2</th>
+                        <th>Total AS</th>
                         <th>Phenotype</th>
                     </tr>
                 </thead>
@@ -63,22 +63,26 @@
 <div class="container">
     <div class="row py-5">
         <div class="col">
-            <h2>Frequency of Haplotypes</h2>
+            <h2>Allele frequency</h2>
             <canvas id="g1" style="max-width: auto"></canvas>
         </div>
+
         <div class="col">
-            <h2>Frequency of Enzymatic Acitity</h2>
-            <canvas id="g2" style="max-width: auto"></canvas>
+            <h2>Phenotype frequency</h2>
+            <canvas id="g3" style="max-width: auto"></canvas>
         </div>
+
+        
     </div>
     <div class="row pb-5">
         <div class="col">
-            <h2>Frequency of Phenotype</h2>
-            <canvas id="g3" style="max-width: auto"></canvas>
-        </div>
-        <div class="col">
-            <h2>Frequency of total score</h2>
+            <h2>Activity score frequency</h2>
             <canvas id="g4" style="max-width: auto"></canvas>
+        </div>
+
+        <div class="col">
+            <h2>Frequency of allele enzymatic activity</h2>
+            <canvas id="g2" style="max-width: auto"></canvas>
         </div>
     </div>
 </div>
@@ -87,46 +91,70 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
 <script>
-    // Leitura do CSV e criação do gráfico
-    Papa.parse('/example/halelos.csv', {
-        download: true,
-        complete: function(results) {
-            const labels = [];
-            const data = [];
+    // Função para contar a frequência dos alelos
+function countAlleles(data) {
+    const counts = {};
+    data.forEach(row => {
+        // Processar a coluna 1_allele
+        if (row['1_allele']){
+            const alleles1 = row['1_allele'].includes('/') ? row['1_allele'].split('/') : [row['1_allele']];
 
-            // Itera pelos resultados para extrair os dados
-            results.data.forEach((row, index) => {
-                if (index > 0 && row.length === 3) { // Ignora o cabeçalho e verifica o comprimento correto da linha
-                    labels.push(row[1]);
-                    data.push(parseFloat(row[2]));
+            alleles1.forEach(allele => {
+                if (allele) {
+                    counts[allele] = (counts[allele] || 0) + 1;
                 }
             });
 
-            // Configuração do gráfico
-            const ctx = document.getElementById('g1').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Values',
-                        data: data,
-                        backgroundColor: 'rgba(75, 192, 192)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    indexAxis: 'y', // Isto transforma o gráfico de barras em horizontal
-                    scales: {
-                        x: {
-                            beginAtZero: true
-                        }
-                    }
+            // Processar a coluna 2_allele
+            const alleles2 = row['2_allele'].includes('/') ? row['2_allele'].split('/') : [row['2_allele']];
+            alleles2.forEach(allele => {
+                if (allele) {
+                    counts[allele] = (counts[allele] || 0) + 1;
                 }
             });
         }
     });
+    return counts;
+}
+
+// Leitura do CSV e criação do gráfico
+Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
+    download: true,
+    header: true,
+    complete: function(results) {
+        const data = results.data;
+        
+        // Contar a frequência dos alelos
+        const alleleCounts = countAlleles(data);
+        
+        // Preparar dados para o gráfico
+        const labels = Object.keys(alleleCounts);
+        const values = Object.values(alleleCounts);
+
+        // Configuração do gráfico
+        const ctx = document.getElementById('g1').getContext('2d');
+        const alleleChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Frequency',
+                    data: values,
+                    backgroundColor: 'rgba(00, 108, 255)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+});
+
 </script>
 
 <script>
@@ -143,7 +171,7 @@
     }
 
     // Leitura do CSV e criação do gráfico
-    Papa.parse('/example/final.csv', {
+    Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
         download: true,
         header: true,
         complete: function(results) {
@@ -206,7 +234,7 @@
     }
 
     // Leitura do CSV e criação do gráfico
-    Papa.parse('/example/final.csv', {
+    Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
         download: true,
         header: true,
         complete: function(results) {
@@ -257,7 +285,7 @@
     }
 
     // Leitura do CSV e criação do gráfico
-    Papa.parse('/example/final.csv', {
+    Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
         download: true,
         header: true,
         complete: function(results) {

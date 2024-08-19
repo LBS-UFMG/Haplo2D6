@@ -13,7 +13,7 @@ halelos = pd.read_csv(path+"/halelos.csv", header=None)
 halelos.columns = ["n", "haplotype", "freq"]
 halelos_dict = dict(zip(halelos.n, halelos.haplotype))
 
-modelo = pd.read_csv("./input/model.csv", header=None)
+modelo = pd.read_csv(path+"/model.csv", header=None)
 modelo.columns = ["haplotype", "enzymatic_activity", "allele", "score"]
 modelo["score"] = pd.to_numeric(modelo["score"])
 
@@ -28,10 +28,11 @@ def phenotype(n):
         0: "gPM",
         0.25: "gIM",
         0.5: "gIM",
-        1: "gNM-S",
-        1.25: "gNM-S",
+        0.75: "gIM",
+        1: "gIM",
+        1.25: "gNM-F",
         1.5: "gNM-F",
-        2: "gNM-F"
+        2: "gNM-F",
     }
     return switch.get(n, "-")
 

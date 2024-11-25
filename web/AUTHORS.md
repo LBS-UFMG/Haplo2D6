@@ -1,6 +1,5 @@
 # Created by
 Maria Carolina Silva de Barros Puça
-Octávio 
 Taís Nóbrega de Sousa
 
 # Backend / Frontend development

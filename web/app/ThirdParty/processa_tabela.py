@@ -25,14 +25,22 @@ def phenotype(n):
         return "gUM"
 
     switch = {
-        0: "gPM",
+        # 0: "gPM",
+        # 0.25: "gIM",
+        # 0.5: "gIM",
+        # 0.75: "gIM",
+        # 1: "gIM",
+        # 1.25: "gNM-F",
+        # 1.5: "gNM-F",
+        # 2: "gNM-F",
+        0:"gPM",
         0.25: "gIM",
         0.5: "gIM",
         0.75: "gIM",
         1: "gIM",
-        1.25: "gNM-F",
-        1.5: "gNM-F",
-        2: "gNM-F",
+        1.25: "gNM",
+        1.5: "gNM",
+        2: "gNM",
     }
     return switch.get(n, "-")
 

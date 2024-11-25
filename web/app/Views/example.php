@@ -23,15 +23,16 @@
                         <th>#</th>
                         <th>ID</th>
                         <th>Haplotype #1</th>
-                        <th>Enzymatic activity #1</th>
+                        <th>Allele Functional #1</th>
                         <th>Allele #1</th>
-                        <th>Activity Score #1</th>
+                        <th>Activity Value #1</th>
                         <th>Haplotype #2</th>
-                        <th>Enzymatic activity #2</th>
+                        <th>Allele Functional #2</th>
                         <th>Allele #2</th>
-                        <th>Activity Score #2</th>
-                        <th>Total AS</th>
+                        <th>Activity Value #2</th>
+                        <th>Activity Score</th>
                         <th>Phenotype</th>
+                        <th>Diplotype</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
@@ -68,10 +69,9 @@
         </div>
 
         <div class="col">
-            <h2>Phenotype frequency</h2>
-            <canvas id="g3" style="max-width: auto"></canvas>
+            <h2>Diplotype frequency</h2>
+            <canvas id="g2" style="max-width: auto"></canvas>
         </div>
-
         
     </div>
     <div class="row pb-5">
@@ -81,8 +81,8 @@
         </div>
 
         <div class="col">
-            <h2>Frequency of allele enzymatic activity</h2>
-            <canvas id="g2" style="max-width: auto"></canvas>
+            <h2>Phenotype frequency</h2>
+            <canvas id="g3" style="max-width: auto"></canvas>
         </div>
     </div>
 </div>
@@ -141,15 +141,24 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
                     label: 'Frequency',
                     data: values,
                     backgroundColor: 'rgba(00, 108, 255)',
+                    borderColor: 'rgba(0, 0, 0, 0)',
                     borderWidth: 1
                 }]
             },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true
+                        x: {
+                            grid: {
+                                display: false // Remove as linhas de grade do eixo X
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false, // Remove as linhas de grade do eixo y
+                                beginAtZero: true
+                            }
+                        }
                     }
-                }
             }
         });
     }
@@ -162,10 +171,13 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
     function countHaplotypes(data, column) {
         const counts = {};
         data.forEach(row => {
-            const haplotype = row[column];
-            if (haplotype) {
-                counts[haplotype] = (counts[haplotype] || 0) + 1;
-            }
+            // const haplotype = row[column];
+            // if (haplotype) {
+            //     counts[haplotype] = (counts[haplotype] || 0) + 1;
+            // }
+
+            const totalDiplotype = row['1_allele'] + '/' + row['2_allele'];
+            if (totalDiplotype) { counts[totalDiplotype] = (counts[totalDiplotype] || 0) + 1; }
         });
         return counts;
     }
@@ -211,7 +223,15 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
                     indexAxis: 'y', // Isto transforma o gráfico de barras em horizontal
                     scales: {
                         x: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            grid: {
+                                display: false // Remove as linhas de grade do eixo X
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false // Remove as linhas de grade do eixo y
+                            }
                         }
                     }
                 }
@@ -262,8 +282,16 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
                 },
                 options: {
                     scales: {
+                        x: {
+                            grid: {
+                                display: false // Remove as linhas de grade do eixo X
+                            }
+                        },
                         y: {
-                            beginAtZero: true
+                            grid: {
+                                display: false, // Remove as linhas de grade do eixo y
+                                beginAtZero: true
+                            }
                         }
                     }
                 }
@@ -277,9 +305,7 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
         const counts = {};
         data.forEach(row => {
             const totalScore = row['total_score'];
-            if (totalScore) {
-                counts[totalScore] = (counts[totalScore] || 0) + 1;
-            }
+            if (totalScore) { counts[totalScore] = (counts[totalScore] || 0) + 1; }
         });
         return counts;
     }
@@ -313,8 +339,16 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
                 },
                 options: {
                     scales: {
+                        x: {
+                            grid: {
+                                display: false // Remove as linhas de grade do eixo X
+                            }
+                        },
                         y: {
-                            beginAtZero: true
+                            grid: {
+                                display: false, // Remove as linhas de grade do eixo y
+                                beginAtZero: true
+                            }
                         }
                     }
                 }
@@ -341,7 +375,8 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
                         })
                         .map(i => {
                             itens = i.split(',')
-                            // console.log(itens)
+                            diplotype = itens[4] + '/' + itens[8]
+                            itens = itens.concat([diplotype])
                             return itens
                         }),
                     pageLength: 50,

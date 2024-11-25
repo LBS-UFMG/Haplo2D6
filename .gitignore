@@ -18,3 +18,4 @@ application/logs/*
 /vendor/
 machine_learning/.DS_Store
 machine_learning/.DS_Store
+.DS_Store

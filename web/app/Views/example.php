@@ -43,7 +43,7 @@
     <div class="col-12 col-md-3 p-4 bg-light">
         <p class="text-muted">Download files:</p>
         <ul>
-            <li><a href="<?= filtra_url(base_url('/example/final.csv')) ?>">final.csv</a></li>
+            <li><a href="<?= filtra_url(base_url('/example/final_table.csv')) ?>">final.csv</a></li>
 
             <li><a href="<?= filtra_url(base_url('/example/halelos.csv')) ?>">halelos.csv</a></li>
             <li><a href="<?= filtra_url(base_url('/example/pacientes.csv')) ?>">pacientes.csv</a></li>
@@ -203,6 +203,7 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
             }
 
             // Preparar dados para o gráfico
+            delete allHaplotypes['undefined/undefined'];
             const labels = Object.keys(allHaplotypes);
             const values = Object.values(allHaplotypes);
 
@@ -220,7 +221,7 @@ Papa.parse('<?= filtra_url(base_url("/example/final.csv")) ?>', {
                     }]
                 },
                 options: {
-                    indexAxis: 'y', // Isto transforma o gráfico de barras em horizontal
+                    // indexAxis: 'y', // Isto transforma o gráfico de barras em horizontal
                     scales: {
                         x: {
                             beginAtZero: true,

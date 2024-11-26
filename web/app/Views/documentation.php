@@ -11,6 +11,8 @@
 
     <h1 class="mt-5 mb-4">Haplo2D6 documentation</h1>
 
+    <p><a href="<?=base_url('/docs/Documentation_Haplo2D6.pdf')?>">Click here</a> to download the complete documentation.</p>
+
     <h2 class="text-muted mb-3 mt-3">What is Haplo2D6?</h2>
 
     <p class="text-muted">Haplo2D6 is a specialized bioinformatics tool designed to predict star alleles (haplotypes) within the CYP2D6 gene by analyzing genotyping data, including SNPs and deletions. It offers an efficient and concise solution for researchers and clinicians studying the polymorphic nature of CYP2D6.</p>
@@ -24,42 +26,24 @@
 
     <center><img src="<?= base_url('/img/home.png') ?>" width="400px"></center>
 
-    <h2 class="text-muted mt-5 pb-2">Where does the data used for analysis come from?</h2>
-
-    <p class="text-muted">All data comes from the <a href="https://www.pharmvar.org/gene/CYP2D6" target="_blank">phamvar database</a>.</p>
 
     <h2 class="mt-5 mb-3 text-muted">What output does Haplo2D6 provide?</h2>
 
     <ul class="text-muted mb-5">
-        <li>patient_id: individual identification (ID)</li>
-        <li>1_haplotype: Haplotype 1 (Haplotype)</li>
-        <li>1_allele: Star allele for haplotype 1 (Star allele)</li>
-        <li>1_score: Activity score for haplotype 1 (Activity score)</li>
-        <li>1_enzymatic_activity: Enzymatic activity for haplotype 1 (Enzymatic activity)</li>
-        <li>1_score: Activity score for haplotype 1 (Activity score)</li>
-        <li>2_haplotype: Haplotype 2 (Haplotype)</li>
-        <li>2_enzymatic_activity: Enzymatic activity for haplotype 1</li>
-        <li>2_allele: Star allele for haplotype 1</li>
-        <li>2_score: Activity score for haplotype 1</li>
-        <li>total_score: Final score of the two haplotypes that give the activity score (Total score)</li>
+    <li>ID: individual identification (ID)
+</li><li>Haplotype #1: Haplotype 1 (Haplotype)
+</li><li>Allele Functional #1: Enzymatic activity for haplotype 1 (Enzymatic activity)
+</li><li>Allele #1: Star allele for haplotype 1 (Star allele)
+</li><li>Activity Value #1: Activity score for haplotype 1 (Activity score)
+</li><li>Haplotype #2: Haplotype 2 (Haplotype)
+</li><li>Allele Functional #2: Enzymatic activity for haplotype 2 (Enzymatic activity)
+</li><li>Allele #2: Star allele for haplotype 2 (Star allele)
+</li><li>Activity Value #2: Activity score for haplotype 2 (Activity score)
+</li><li>Activity Score: Final score of the two haplotypes that give the activity score (Final score)
+</li><li>Phenotype: Predicted phenotype of the individual
+</li><li>Diplotype: refers to the combination of two haplotypes (represented by star alleles).</li> activity score (Total score)</li>
         <li>phenotype: Predicted phenotype of the individual</li>
     </ul>
-
-    <h2 class="text-muted">SNPs evaluated</h2>
-
-    <div class="mb-5">
-    <p class="text-muted">In the current version, Haplo2D6 only evaluates the following SNPs:</p>
-
-    <p class="text-muted">
-        <strong>rsID</strong>	rs3892097	rs28371725	rs59421388	rs1065852	rs28371706	rs1080985	rs16947	rs1135840	rs5030656
-    </p>
-    <p class="text-muted"><strong>Nucleotide changes M33388</strong>	1846G>A 	2988G>A 	3183G>A 	100C>T	1023C>T/A	 -1584C>G	2850C>T 	4180G>C 	2615delAAG </p>
-    <p class="text-muted"><strong>Effect on protein (NP_000097.3)</strong>	Splicing defect	Splicing defect	V338M	P34S	T107I/N	5' region	R296C	S486T	K281del</p>
-    <p class="text-muted"><strong>Position at NC_000022.11 (Homo sapiens chromosome 22, GRCh38.p2)</strong>	g.42128945C>T	g.42127803C>T	g.42127608C>T	g.42130692G>A	g.42129770G>A/T	g.42132375G>C	g.42127941G>A	g.42126611C>G	g.42128174delCTT</p>
-    <p class="text-muted"><strong>Position at NG_008376.3</strong> (CYP2D6 RefSeqGene; reverse relative to chromosome)	g.6047G>A	g.7189G>A	g.7384G>A	g.4300C>T	g.5222C>T/A	g.2617C>G	g.7051C>T	g.8381G>C	g.6816delAAG</p>
-
-    </div>
-    <center class="mb-5"><img src="<?= base_url('/img/home2.png') ?>" width="400px"></center>
 
 
 </div>

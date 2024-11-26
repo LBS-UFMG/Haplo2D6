@@ -57,3 +57,13 @@ x["phenotype"] = x.apply(lambda row: phenotype(row["total_score"]), axis=1)
 x.fillna("-")
 
 x.to_csv(path+'/final.csv')
+
+arquivo = path+"/final_table.csv"
+
+with open(path+'/final.csv') as f:
+        linhas = f.readlines()
+
+linhas[0]="#,ID,Haplotype #1,Allele Functional #1,Allele #1,Activity Value #1,Haplotype #2,Allele Functional #2,Allele  #2,Activity Value #2,Activity Score,Phenotype\n"
+with open(arquivo, "w") as f:
+    f.writelines(linhas)  # Escrever as linhas modificadas de volta ao arquivo
+

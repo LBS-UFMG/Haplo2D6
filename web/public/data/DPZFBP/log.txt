@@ -1,0 +1,11 @@
+../app/ThirdParty/pipeline.sh: line 6: ../app/ThirdParty/phase.2.1.1.linux/PHASE: cannot execute binary file
+sed: illegal option -- -
+usage: sed script [-EHalnru] [-i extension] [file ...]
+	sed [-EHalnu] [-i extension] [-e script] ... [-f script_file] ... [file ...]
+sed: illegal option -- -
+usage: sed script [-EHalnru] [-i extension] [file ...]
+	sed [-EHalnu] [-i extension] [-e script] ... [-f script_file] ... [file ...]
+Traceback (most recent call last):
+  File "/Users/diego/Documents/GitHub/Haplo2D6/web/public/../app/ThirdParty/processa_tabela.py", line 1, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'

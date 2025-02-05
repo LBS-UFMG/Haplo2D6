@@ -14,7 +14,7 @@
       </div>
       <div class="col-lg-6">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome to Haplo2D6</h1>
-        <p class="lead"><b>Haplo2D6</b> is a specialized bioinformatics tool designed to predict star alleles (haplotypes) within the CYP2D6 gene by analyzing genotyping data, including SNPs and deletions. It offers an efficient and concise solution for researchers and clinicians studying the polymorphic nature of CYP2D6.</p>
+        <p class="lead"><b>Haplo2D6</b> is a specialized bioinformatics tool that automates the analysis of CYP2D6 phenotype prediction based on user-provided genotyping data and reference information. The tool predicts haplotypes using the PHASE algorithm and then interprets the data to predict the CYP2D6 phenotype, offering an efficient and reliable solution for researchers and clinicians studying CYP2D6 polymorphisms.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="#try" class="btn btn-success btn-lg px-4 me-md-2">Run</a>
           <button type="button" class="btn btn-outline-secondary btn-lg px-4">Documentation</button>

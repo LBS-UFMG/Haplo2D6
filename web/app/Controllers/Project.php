@@ -30,6 +30,8 @@ class Project extends BaseController
             fclose($f);
         }
 
-        dd($cnv);
+        foreach($cnv as $c){
+            print($c[0].'-'.$c[1]);
+        }
     }
 }

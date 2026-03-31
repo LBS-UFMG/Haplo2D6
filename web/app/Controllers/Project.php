@@ -22,11 +22,11 @@ class Project extends BaseController
         // esta função realiza pós-processamento para múltiplas cópias
 
         // le arquivo cnv
-        $cnv = file('./data/'.$id.'/cnv.csv'); // lê tudo em array
-
-        foreach ($cnv as $hp) {
-            $c = explode(",",$hp);
-            #echo($c[0].'-'.$c[1]);
+        $cnv_file = file('./data/'.$id.'/cnv.csv');
+        $cnv = [];
+        foreach ($cnv_file as $hp) {
+            $c = explode(",", trim($hp));
+            $cnv[$c[0]] = $c[1];
         }
 
         // le arquivo final_table.csv
@@ -48,20 +48,10 @@ class Project extends BaseController
             $score = $l[10];
             $phenotype = $l[11];
 
-            echo "num: $num<br>";
-echo "id: $id<br>";
-echo "haplotype1: $haplotype1<br>";
-echo "functional1: $functional1<br>";
-echo "allele1: $allele1<br>";
-echo "activity1: $activity1<br>";
-echo "haplotype2: $haplotype2<br>";
-echo "functional2: $functional2<br>";
-echo "allele2: $allele2<br>";
-echo "activity2: $activity2<br>";
-echo "score: $score<br>";
-echo "phenotype: $phenotype<br>";
-            
-
+            // condição: se allele1 == allele2 and $cnv[allele1] == 1
+            if(($allele1 == $allele2)and($cnv[$allele1] == 1)){
+                echo $allele1.'-'.$allele2.'-'.$cnv[$allele1].'<br>';
+            }
         }
 
     }

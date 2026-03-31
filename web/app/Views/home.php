@@ -127,9 +127,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  const exampleEl = document.getElementById('example')
-const tooltip = new bootstrap.Tooltip(exampleEl, options)
-
-  </script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el))
+</script>
 <?= $this->endSection() ?>
 

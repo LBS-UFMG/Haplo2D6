@@ -28,7 +28,7 @@ class Project extends BaseController
             $c = explode(",", trim($hp));
             $cnv[$c[0]] = $c[1];
         }
-        dd($cnv);
+        
         // le arquivo final_table.csv
         $final = file('./data/'.$id.'/final_table.csv'); 
         foreach ($final as $f) {
@@ -48,9 +48,9 @@ class Project extends BaseController
             $score = $l[10];
             $phenotype = $l[11];
 
-            // condição: se allele1 == allele2 and $cnv[allele1] == 1
-            if(($allele1 == $allele2)and($cnv[$allele1] == 1)){
-                echo $allele1.'-'.$allele2.'-'.$cnv[$allele1].'<br>';
+            // condição: se haplotype1 == haplotype2 and $cnv[haplotype2] == 1
+            if(($haplotype1 == $haplotype2)and($cnv[$haplotype1] == 1)){
+                echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
             }
         }
 

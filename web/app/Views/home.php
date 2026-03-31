@@ -60,6 +60,8 @@
             <div>
               <p class="mt-3"><strong>PHASE parameters <i class="bi bi-question-circle-fill" title='According to PHASE documentation: "each iteration consists of performing thinning interval steps through the Markov chain, and each step updates each individual once. The number of iterations required to obtain accurate answers depends on the complexity and size of the data set". PHASE defaults: 100 1 100'></i>:</strong></p>
 
+              <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip" id="example">inline links</a> 
+
               <div class="row">
                 <div class="col">
                   <div class="form-floating mb-3">
@@ -83,20 +85,18 @@
                 </div>
               </div>
             </div>
-          </div>
-
-
-          <label>
-            <input type="checkbox" id="defaultCheckbox" checked>
-            Use default parameters for CNV
-          </label>
-
-          <div id="cnv-container">
-            <label for="cnvData">Insert the CNV data</label><br>
-            <textarea id="cnvData" rows="5" cols="50"></textarea>
-          </div>
           
-          <script>
+            <label>
+              <input type="checkbox" id="defaultCheckbox" checked>
+              Use default parameters for CNV
+            </label>
+
+            <div id="cnv-container">
+              <label for="cnvData">Insert the CNV data</label><br>
+              <textarea id="cnvData" rows="5" class="form-control col-6"></textarea>
+            </div>
+
+            <script>
               const checkbox = document.getElementById('defaultCheckbox');
               const container = document.getElementById('cnv-container');
 
@@ -114,7 +114,7 @@
               // Evento ao mudar o checkbox
               checkbox.addEventListener('change', toggleTextarea);
             </script>
-
+          </div>
         </div>
       </div>
 
@@ -123,5 +123,11 @@
     <input type="submit" class="btn btn-success mt-3 mb-5 w-100 p-3" value="Run">
   </form>
 </div>
+
+<script>
+  const exampleEl = document.getElementById('example')
+const tooltip = new bootstrap.Tooltip(exampleEl, options)
+
+  </script>
 <?= $this->endSection() ?>
 

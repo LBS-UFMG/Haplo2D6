@@ -52,7 +52,7 @@ class Project extends BaseController
 
             // condição: se haplotype1 == haplotype2 and $cnv[haplotype2] == 1
             if(($haplotype1 == $haplotype2)and($cnv[$haplotype1] == 1)){
-                echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
+                #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','
                     .$haplotype1.','
@@ -64,7 +64,7 @@ class Project extends BaseController
                     .'-'.',' # allele2
                     .'-'.',' # activity2
                     .$activity1.',' # score
-                    .explode('/',$phenotype)[0].'\n';
+                    .explode('/',$phenotype)[0];
 
                 fwrite($w, $texto);
             }

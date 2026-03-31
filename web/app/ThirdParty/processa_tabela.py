@@ -4,7 +4,7 @@ import sys
 
 id_projeto = sys.argv[1]
 # ./data/$id_projeto/
-path = './data/'+id_projeto
+path = '/home/liase/www/Haplo2D6/web/public/data/'+id_projeto
 
 pacientes = pd.read_csv(path+"/pacientes.csv", header=None)
 pacientes.columns = ["patient_id", "h1", "h2"]
@@ -25,15 +25,7 @@ def phenotype(n):
         return "gUM"
 
     switch = {
-        # 0: "gPM",
-        # 0.25: "gIM",
-        # 0.5: "gIM",
-        # 0.75: "gIM",
-        # 1: "gIM",
-        # 1.25: "gNM-F",
-        # 1.5: "gNM-F",
-        # 2: "gNM-F",
-        0:"gPM",
+ 0:"gPM",
         0.25: "gIM",
         0.5: "gIM",
         0.75: "gIM",
@@ -41,6 +33,14 @@ def phenotype(n):
         1.25: "gNM",
         1.5: "gNM",
         2: "gNM",
+#	0: "gPM",
+#        0.25: "gIM",
+#        0.5: "gIM",
+#        0.75: "gIM",
+#        1: "gIM",
+#        1.25: "gNM-F",
+#        1.5: "gNM-F",
+#        2: "gNM-F"
     }
     return switch.get(n, "-")
 
@@ -56,14 +56,15 @@ x["total_score"] = x["1_score"] + x["2_score"]
 x["phenotype"] = x.apply(lambda row: phenotype(row["total_score"]), axis=1)
 x.fillna("-")
 
+
 x.to_csv(path+'/final.csv')
 
 arquivo = path+"/final_table.csv"
 
 with open(path+'/final.csv') as f:
-        linhas = f.readlines()
+	linhas = f.readlines()
 
-linhas[0]="#,ID,Haplotype #1,Allele Functional #1,Allele #1,Activity Value #1,Haplotype #2,Allele Functional #2,Allele  #2,Activity Value #2,Activity Score,Phenotype\n"
+linhas[0]="#,ID,Haplotype #1,Allele Functional #1,Allele #1,Activity Value #1,Haplotype #2,Allele Functional #2,Allele #2,Activity Value #2,Activity Score,Phenotype\n"
+
 with open(arquivo, "w") as f:
     f.writelines(linhas)  # Escrever as linhas modificadas de volta ao arquivo
-

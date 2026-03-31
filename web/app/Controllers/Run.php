@@ -61,7 +61,6 @@ class Run extends BaseController
         // inicia a execução do pipeline ********************************
         shell_exec('nohup ../app/ThirdParty/pipeline.sh '.$projeto.' > ./data/'.$projeto.'/log.txt &');
 
-
         return view('running', $dados);
     }
 

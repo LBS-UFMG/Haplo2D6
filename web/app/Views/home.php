@@ -58,9 +58,7 @@
               <input type="radio" class="ms-5" disabled><span class="ms-2 text-muted">Separated by semicolon (unavailable)</span>
             </div>
             <div>
-              <p class="mt-3"><strong>PHASE parameters <i class="bi bi-question-circle-fill" title='According to PHASE documentation: "each iteration consists of performing thinning interval steps through the Markov chain, and each step updates each individual once. The number of iterations required to obtain accurate answers depends on the complexity and size of the data set". PHASE defaults: 100 1 100'></i>:</strong></p>
-
-              <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip" id="example">inline links</a> 
+              <p class="mt-3"><strong>PHASE parameters <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='According to PHASE documentation: "each iteration consists of performing thinning interval steps through the Markov chain, and each step updates each individual once. The number of iterations required to obtain accurate answers depends on the complexity and size of the data set". PHASE defaults: 100 1 100'></i>:</strong></p>
 
               <div class="row">
                 <div class="col">
@@ -88,11 +86,11 @@
           
             <label>
               <input type="checkbox" id="defaultCheckbox" checked>
-              Use default parameters for CNV
+              Use default parameters for CNV <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='copy number variations'></i>
             </label>
 
             <div id="cnv-container">
-              <label for="cnvData">Insert the CNV data</label><br>
+              <label for="cnvData" class="small text-muted">Insert the CNV data <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: AAAAA 2'></i></label><br>
               <textarea id="cnvData" rows="5" class="form-control col-6"></textarea>
             </div>
 

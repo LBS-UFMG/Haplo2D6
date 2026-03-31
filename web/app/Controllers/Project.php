@@ -20,6 +20,8 @@ class Project extends BaseController
 
     private function cnv($id){
         // esta função realiza pós-processamento para múltiplas cópias
+        $arquivo = "./data/$id/final_table_cnv.csv";
+        $w = fopen($arquivo, "w");
 
         // le arquivo cnv
         $cnv_file = file('./data/'.$id.'/cnv.csv');
@@ -51,8 +53,26 @@ class Project extends BaseController
             // condição: se haplotype1 == haplotype2 and $cnv[haplotype2] == 1
             if(($haplotype1 == $haplotype2)and($cnv[$haplotype1] == 1)){
                 echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
+                $texto = $num.','
+                    .$id.','
+                    .$haplotype1.','
+                    .$functional1.','
+                    .$allele1.','
+                    .$activity1.','
+                    .'-'.',' # haplotype2
+                    .'-'.',' # functional2
+                    .'-'.',' # allele2
+                    .'-'.',' # activity2
+                    .$activity1.',' # score
+                    .explode('/',$phenotype)[0].'\n';
+
+                fwrite($w, $texto);
+            }
+            else{
+                fwrite($w, $f); # grava a linha inteira
             }
         }
-
+        
+        fclose($w);
     }
 }

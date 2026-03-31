@@ -12,6 +12,14 @@ class Run extends BaseController
         fclose($fp);
     }
 
+    private function gravar_cnv($texto, $projeto){
+        // essa função grava os dados em um arquivo
+        $arquivo = "./data/$projeto/cnv.csv";
+        $fp = fopen($arquivo, "w");
+        fwrite($fp, $texto);
+        fclose($fp);
+    }
+
     private function gravar_model($texto, $projeto){
         // essa função grava os dados em um arquivo
         $arquivo = "./data/$projeto/model.csv";
@@ -45,6 +53,10 @@ class Run extends BaseController
         // grava dados no arquivo "input.inp"
         Run::gravar($dados['input'], $projeto);
         Run::gravar_model($dados['model'], $projeto);
+
+        if(!empty($dados['cnvDados'])){
+            Run::gravar_cnv($dados['cnvDados'], $projeto);
+        }
 
         // inicia a execução do pipeline ********************************
         shell_exec('nohup ../app/ThirdParty/pipeline.sh '.$projeto.' > ./data/'.$projeto.'/log.txt &');

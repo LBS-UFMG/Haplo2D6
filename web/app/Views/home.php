@@ -91,7 +91,7 @@
 
             <div id="cnv-container">
               <label for="cnvData" class="small text-muted">Insert the CNV data (<a href="<?=base_url('/input/cnv.csv')?>">download an example file</a>) <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: AAAAA,2'></i></label><br>
-              <textarea id="cnvData" rows="5" class="form-control col-6"></textarea>
+              <textarea id="cnvData" name="cnvData" rows="5" class="form-control col-6"></textarea>
             </div>
 
             <script>

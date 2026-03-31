@@ -22,16 +22,12 @@ class Project extends BaseController
         // esta função realiza pós-processamento para múltiplas cópias
 
         // le arquivo cnv
-        if (($f = fopen('./data/'.$id.'/cnv.csv', 'r')) !== false) {
-            $header = fgetcsv($f); // cabeçalho
-            while ($row = fgetcsv($f)) {
-                $cnv[] = array_combine($header, $row);
-            }
-            fclose($f);
+        $linhas = file('./data/'.$id.'/cnv.csv'); // lê tudo em array
+
+        foreach ($linhas as $linha) {
+            $c = explode(",",$linha);
+            echo($c[0].'-'.$c[1]);
         }
 
-        foreach($cnv as $c){
-            d($c);
-        }
     }
 }

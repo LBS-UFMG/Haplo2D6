@@ -384,26 +384,28 @@ const allHaplotypes = haplotype1Counts;
 
 <script>
 
-    $(()=>{
-        fetch('<?=filtra_url(base_url("/data/$id/final.csv"))?>')
-            .then(response => response.text())
-            .then(dados => {
+    $(() => {
 
-                // console.log('datatable:', dados)
-                $('#resultado').DataTable({
-                    data: dados.split('\n')
-                        .filter(j=>{if(j.substr(0,1) != ','){return j}})
-                        .map(i=>{
-                            itens = i.split(',')
-                            diplotype = itens[4] + '/' + itens[8]
-                            itens = itens.concat([diplotype])
-                            return itens
-                        }),
+    const url1 = '<?=filtra_url(base_url("/data/$id/final_table_cnv.csv"))?>';
+    const url2 = '<?=filtra_url(base_url("/data/$id/final.csv"))?>';
+
+    fetch(url1)
+        .then(r => r.ok ? r.text() : fetch(url2).then(r2 => r2.text()))
+        .then(dados => {
+
+            $('#resultado').DataTable({
+                data: dados.split('\n')
+                    .filter(j=>{if(j.substr(0,1) != ','){return j}})
+                    .map(i=>{
+                        itens = i.split(',')
+                        diplotype = itens[4] + '/' + itens[8]
+                        itens = itens.concat([diplotype])
+                        return itens
+                    }),
                         pageLength: 25,
                 })
-            })
-        
-    })
+        })
+});
 
 </script>
 

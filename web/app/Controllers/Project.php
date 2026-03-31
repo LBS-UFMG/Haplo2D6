@@ -32,7 +32,7 @@ class Project extends BaseController
         }
         
         // le arquivo final_table.csv
-        $final = file('./data/'.$id.'/final_table.csv'); 
+        $final = file('./data/'.$id.'/final.csv'); 
         foreach ($final as $f) {
             $l = explode(",",$f);
             #,ID,Haplotype #1,Allele Functional #1,Allele #1,Activity Value #1,Haplotype #2,Allele Functional #2,Allele #2,Activity Value #2,Activity Score,Phenotype
@@ -59,7 +59,7 @@ class Project extends BaseController
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
-                    .'-'.',' # haplotype2
+                    .'Copies = '.$cnv[$haplotype1].',' # haplotype2
                     .'-'.',' # functional2
                     .'-'.',' # allele2
                     .'-'.',' # activity2

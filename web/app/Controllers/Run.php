@@ -53,7 +53,7 @@ class Run extends BaseController
         // grava dados no arquivo "input.inp"
         Run::gravar($dados['input'], $projeto);
         Run::gravar_model($dados['model'], $projeto);
-
+        dd($dados['cnvDados']);
         if(!empty($dados['cnvDados'])){
             Run::gravar_cnv($dados['cnvDados'], $projeto);
         }

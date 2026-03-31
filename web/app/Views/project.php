@@ -16,10 +16,12 @@
 
     <div class="alert alert-info small">This is project ID <a href="<?=base_url('index.php/project/'.$id)?>"><?=$id?></a>. When processing is complete, this page will automatically refresh.</div>
 
-    <h1 class="mt-5">PHASE is running...</h1>
-    <p class="mb-5">This page will be updated every 60 seconds. Please, wait...</p>
+    <h1 class="mt-5 pt-5">PHASE is running...</h1>
+    <p class="mb-5 pt-5">This page will be updated every 60 seconds. Please, wait...</p>
     
     <meta http-equiv="refresh" content="60"><!-- atualiza a cada 60 segundos -->
+
+    <img src="<?= base_url('/img/loading.gif') ?>" class="text-center">
 
 </div>
 <?php else: ?>

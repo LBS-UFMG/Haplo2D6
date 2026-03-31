@@ -38,7 +38,7 @@
       <div class="col">
         <label class="badge bg-primary mb-1">B</label> <strong class="text-">Allele reference table</strong>
         <textarea class="form-control" placeholder="Insert the reference here..." rows="5" name="model"></textarea>
-        <p class="text-muted mt-2 mb-2">Paste a "tabular reference file" here (<a href="<?=base_url('/input/model.csv')?>" target="_blank">download an example file</a>).</p>
+        <p class="text-muted mt-2 mb-2">Paste a "tabular reference file" here (<a href="<?=base_url('/input/model2.csv')?>" target="_blank">download an example file</a>).</p>
         </div>
     </div>
 
@@ -90,7 +90,7 @@
             </label>
 
             <div id="cnv-container">
-              <label for="cnvData" class="small text-muted">Insert the CNV data <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: AAAAA 2'></i></label><br>
+              <label for="cnvData" class="small text-muted">Insert the CNV data (<a href="<?=base_url('/input/csv.csv')?>">download an example file</a>) <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: AAAAA 2'></i></label><br>
               <textarea id="cnvData" rows="5" class="form-control col-6"></textarea>
             </div>
 

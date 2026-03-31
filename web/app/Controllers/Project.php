@@ -28,7 +28,7 @@ class Project extends BaseController
             $c = explode(",", trim($hp));
             $cnv[$c[0]] = $c[1];
         }
-
+        dd($cnv);
         // le arquivo final_table.csv
         $final = file('./data/'.$id.'/final_table.csv'); 
         foreach ($final as $f) {

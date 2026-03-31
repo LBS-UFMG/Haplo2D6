@@ -39,7 +39,7 @@
     <div class="alert alert-success">Project ID <a href="<?=base_url('/project/'.$id)?>"><?=$id?></a> created.</div>
 
     <h1>Project created</h1>
-    <h1 class="display-1" id="time"></h1>
+    <h1 class="display-1" id="time">00:03</h1>
     <p>Please, wait... redirecting...</p>
 
 </div>

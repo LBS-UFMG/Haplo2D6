@@ -84,6 +84,37 @@
               </div>
             </div>
           </div>
+
+
+          <label>
+            <input type="checkbox" id="defaultCheckbox" checked>
+            Use default parameters for CNV
+          </label>
+
+          <div id="cnv-container">
+            <label for="cnvData">Insert the CNV data</label><br>
+            <textarea id="cnvData" rows="5" cols="50"></textarea>
+          </div>
+          
+          <script>
+              const checkbox = document.getElementById('defaultCheckbox');
+              const container = document.getElementById('cnv-container');
+
+              function toggleTextarea() {
+                if (checkbox.checked) {
+                  container.style.display = 'none';
+                } else {
+                  container.style.display = 'block';
+                }
+              }
+
+              // Inicializa o estado
+              toggleTextarea();
+
+              // Evento ao mudar o checkbox
+              checkbox.addEventListener('change', toggleTextarea);
+            </script>
+
         </div>
       </div>
 

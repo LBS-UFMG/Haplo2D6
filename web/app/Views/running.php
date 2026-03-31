@@ -19,7 +19,7 @@
             onde.textContent = minutes + ":" + seconds;
             if (--timer < 0) {
                 timer = 0;
-                window.location.href = "<?=base_url('/project/'.$id)?>";
+                window.location.href = "<?=base_url('/index.php/project/'.$id)?>";
             }
         }, 1000);
     }
@@ -38,9 +38,9 @@
 
     <div class="alert alert-success">Project ID <a href="<?=base_url('/project/'.$id)?>"><?=$id?></a> created.</div>
 
-    <h1>Running...</h1>
+    <h1>Project created</h1>
     <h1 class="display-1" id="time"></h1>
-    <p>Please, wait...</p>
+    <p>Please, wait... redirecting...</p>
 
 </div>
 

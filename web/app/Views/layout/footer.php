@@ -24,7 +24,7 @@
     </div>
 
     <div class="px-4 d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top text-secondary">
-      <p class="px-4">© 2022-<?=date('Y')?> | Haplelo v0.3 - Developed by <a href="#" data-bs-toggle="modal" data-bs-target="#about" class="link-light">LBS-UFMG</a>.</p>
+      <p class="px-4">© 2022-<?=date('Y')?> | Haplelo v26.330 - Developed by <a href="#" data-bs-toggle="modal" data-bs-target="#about" class="link-light">LBS-UFMG</a>.</p>
       <ul class="list-unstyled d-flex">
         <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
         <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>

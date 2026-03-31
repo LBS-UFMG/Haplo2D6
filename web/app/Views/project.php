@@ -71,8 +71,8 @@
                             <th>Activity Value #2</th>
                             <th>Activity Score</th>
                             <th>Phenotype</th>
-                            <th>Diplotype</th>
-                        </tr>
+
+                            <th>Diplotype</th>                        </tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -82,11 +82,11 @@
         <div class="col-12 col-md-3 p-4 bg-light">
             <p class="text-muted">Download files:</p>
             <ul>
-                <li><a href="<?=filtra_url(base_url('/data/'.$id.'/final_table.csv'))?>">final.csv</a></li>
+                <li><a href="<?=filtra_url(base_url('/data/'.$id.'/final_table.csv'))?>">final_table.csv</a></li>
 
-                <li><a href="<?=filtra_url(base_url('/data/'.$id.'/halelos.csv'))?>">halelos.csv</a></li>
-                <li><a href="<?=filtra_url(base_url('/data/'.$id.'/pacientes.csv'))?>">pacientes.csv</a></li>
-                <li><a href="<?=filtra_url(base_url('/data/'.$id.'/output'))?>">output</a></li>
+                <li><a href="<?=filtra_url(base_url('/data/'.$id.'/halelos.csv'))?>">haplotypes.csv</a></li>
+                <!--<li><a href="<?=filtra_url(base_url('/data/'.$id.'/pacientes.csv'))?>">pacientes.csv</a></li>
+                --><li><a href="<?=filtra_url(base_url('/data/'.$id.'/output'))?>">output</a></li>
                 <li><a href="<?=filtra_url(base_url('/data/'.$id.'/output_freqs'))?>">output_freqs</a></li>
                 <li><a href="<?=filtra_url(base_url('/data/'.$id.'/output_hbg'))?>">output_hbg</a></li>
                 <li><a href="<?=filtra_url(base_url('/data/'.$id.'/output_monitor'))?>">output_monitor</a></li>
@@ -218,6 +218,9 @@ Papa.parse('<?=filtra_url(base_url("/data/$id/final.csv"))?>', {
             const totalDiplotype = row['1_allele'] + '/' + row['2_allele'];
             if (totalDiplotype) { counts[totalDiplotype] = (counts[totalDiplotype] || 0) + 1; }
         });
+if ("undefined/undefined" in counts) {
+    delete counts["undefined/undefined"];
+}
         return counts;
     }
 
@@ -233,16 +236,16 @@ Papa.parse('<?=filtra_url(base_url("/data/$id/final.csv"))?>', {
             const haplotype2Counts = countHaplotypes(data2, '2_enzymatic_activity');
 
             // Combinar os haplótipos e suas frequências
-            const allHaplotypes = {};
-            for (const haplotype in haplotype1Counts) {
-                allHaplotypes[haplotype] = (allHaplotypes[haplotype] || 0) + haplotype1Counts[haplotype];
-            }
-            for (const haplotype in haplotype2Counts) {
-                allHaplotypes[haplotype] = (allHaplotypes[haplotype] || 0) + haplotype2Counts[haplotype];
-            }
+            //const allHaplotypes = {};
+            //for (const haplotype in haplotype1Counts) {
+            //    allHaplotypes[haplotype] = (allHaplotypes[haplotype] || 0) + haplotype1Counts[haplotype];
+            //}
+            //for (const haplotype in haplotype2Counts) {
+            //    allHaplotypes[haplotype] = (allHaplotypes[haplotype] || 0) + haplotype2Counts[haplotype];
+            //}
+const allHaplotypes = haplotype1Counts;
 
             // Preparar dados para o gráfico
-            delete allHaplotypes['undefined/undefined'];
             const labels = Object.keys(allHaplotypes);
             const values = Object.values(allHaplotypes);
 
@@ -430,3 +433,4 @@ Papa.parse('<?=filtra_url(base_url("/data/$id/final.csv"))?>', {
 </script>
 
 <?= $this->endSection() ?>
+

@@ -17,7 +17,7 @@
         <p class="lead"><b>Haplo2D6</b> is a specialized bioinformatics tool that automates the analysis of CYP2D6 phenotype prediction based on user-provided genotyping data and reference information. The tool predicts haplotypes using the PHASE algorithm and then interprets the data to predict the CYP2D6 phenotype, offering an efficient and reliable solution for researchers and clinicians studying CYP2D6 polymorphisms.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="#try" class="btn btn-success btn-lg px-4 me-md-2">Run</a>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Documentation</button>
+          <a href="<?=base_url('/index.php/documentation')?>" class="btn btn-outline-secondary btn-lg px-4">Documentation</a>
         </div>
       </div>
     </div>
@@ -63,22 +63,22 @@
               <div class="row">
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="noi" id="noi" placeholder="Number of iterations (default: 100)" disabled>
-                    <label for="noi">Number of iterations (default: 100)</label>
+                    <input type="number" class="form-control" name="noi" id="noi" placeholder="Number of iterations (default: 20000)" disabled>
+                    <label for="noi">Number of iterations (default: 20000)</label>
                   </div>
                 </div>
 
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="ti" id="ti" placeholder="Thinning interval (default 1)" disabled>
-                    <label for="ti">Thinning interval (default 1)</label>
+                    <input type="number" class="form-control" name="ti" id="ti" placeholder="Thinning interval (default 500)" disabled>
+                    <label for="ti">Thinning interval (default 500)</label>
                   </div>
                 </div>
 
                 <div class="col">
                   <div class="form-floating mb-3">
-                    <input type="number" class="form-control" name="bi" id="bi" placeholder="Burn-in (default 100)" disabled>
-                    <label for="bi">Burn-in (default 100)</label>
+                    <input type="number" class="form-control" name="bi" id="bi" placeholder="Burn-in (default 1000)" disabled>
+                    <label for="bi">Burn-in (default 1000)</label>
                   </div>
                 </div>
               </div>
@@ -93,3 +93,4 @@
   </form>
 </div>
 <?= $this->endSection() ?>
+

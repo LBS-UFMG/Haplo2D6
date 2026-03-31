@@ -1,15 +1,13 @@
-GGGCCCCGC,Normal function,*1/*1xN,1
-GGGCCCTGC,Unknown function,*34,1
-GGGCCCTCC,Normal function,*2D/2xN,1
-GGGCCGTCC,Normal function,*2A/*35/*2xN,1
-GGGCCGTCA,Unknown function,,
-GGGCTCTCC,Decreased function,*17/*17xN,0.5
-GGGTCCCCC,Decreased function,*10/*10x2,0.25
-GGACCCTCC,Decreased function,*29,0.5
-GAGCCCTCC,Decreased function,*41,0.5
-AGGTCCCCC,No function,*4/*4x2,0
-AGGTTCCCC,Unknown function,,
-GGGCCCCGA,Decreased function,*9,0.5
-GGGCCCCCC,Normal function,*39,1
-GGGCCGTGC,Unknown function,,
-GGGTCCCGC,No function,*4J,0
+CCCGCCGGG,Normal,*1,1
+GCCGCTGGC,Normal,*2A,1
+CCCGCTGGC,Normal,*2B,1
+CTCACCGGC,No function,*4A,0
+CTCACCGGG,No function,*4J,0
+CTCACTGGC,No function,*4K,0
+CCCGACGGG,Decreased,*9,0.25
+CTCGCCGGC,Decreased,*10,0.25
+CCTGCTGGC,Decreased,*17,0.5
+CCCGCTGAC,Decreased,*29,0.5
+CCCGCTGGG,Normal,*34,1
+CCCGCCGGC,Normal,*39,1
+CCCGCTAGC,Decreased,*41,0.25

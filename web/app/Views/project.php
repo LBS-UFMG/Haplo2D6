@@ -19,7 +19,7 @@
     <h1 class="mt-5">PHASE is running...</h1>
     <p class="mb-5">This page will be updated every 60 seconds. Please, wait...</p>
     
-    <meta http-equiv="refresh" content="60"><!-- atualiza a cada 60 segundos -->
+    <!-- <meta http-equiv="refresh" content="60">atualiza a cada 60 segundos -->
 
 </div>
 <?php else: ?>

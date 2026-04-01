@@ -122,7 +122,7 @@ class Project extends BaseController
                     .$allele2.',' # allele2
                     .$activity2.',' # activity2
                     .'*'.',' # score 
-                    .$phenotype.','
+                    .'indeter'.','
                     .$cnv[$id]."\n";
                 fwrite($w, $texto);
             }

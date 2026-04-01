@@ -72,6 +72,11 @@ class Project extends BaseController
             $score = $l[10];
             $phenotype = $l[11];
 
+            if($id == 'patient_id'){
+                fwrite($w, "#,ID,Haplotype #1,Allele Functional #1,Allele #1,Activity Value #1,Haplotype #2,Allele Functional #2,Allele #2,Activity Value #2,Activity Score,Phenotype,cnv\n");
+                
+                continue;
+            }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] == 1
             if(($haplotype1 == $haplotype2)and($cnv[$id] == 1)){
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';

@@ -12,7 +12,7 @@ class Project extends BaseController
         if(file_exists('./data/'.$id.'/finished.txt')){
             $dados['ready'] = true;
         }
-        if(file_exists('./data/'.$id.'/cnv.csv')){
+        if(file_exists('./data/'.$id.'/cnv.csv') and ($dados['ready'] == true)){
             Project::cnv($id);
         }
         return view('project', $dados);

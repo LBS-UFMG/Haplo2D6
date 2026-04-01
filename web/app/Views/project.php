@@ -47,8 +47,8 @@
                             <th>Activity Score</th>
                             <th>Phenotype</th>
 
-                            <th>Diplotype</th>
                             <th>CNV</th>
+                            <th>Diplotype</th>
                         </tr>
                     </thead>
                     <tbody></tbody>

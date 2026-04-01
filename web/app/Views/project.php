@@ -421,7 +421,7 @@ fetch(url1)
                         .map(i => {
                             itens = i.split(',')
                             diplotype = itens[4] + '/' + itens[8]
-                            console.log(itens.lenght())
+                            console.log(itens.length)
                             itens = itens.concat([diplotype])
                             return itens
                         }),

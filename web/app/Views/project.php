@@ -421,8 +421,13 @@ fetch(url1)
                         .map(i => {
                             itens = i.split(',')
                             diplotype = itens[4] + '/' + itens[8]
-                            console.log(itens.length)
-                            itens = itens.concat([diplotype])
+                            if(itens.length == 12){
+                                itens = itens.concat([2,diplotype])
+                            }
+                            else{
+                                itens = itens.concat([diplotype])
+                            }
+                            
                             return itens
                         }),
                     pageLength: 25,

@@ -108,6 +108,24 @@ class Project extends BaseController
                     .$cnv[$id]."\n";
                 fwrite($w, $texto);
             }
+            // condição: se haplotype1 != haplotype2
+            else if($haplotype1 != $haplotype2){
+                #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
+                $texto = $num.','
+                    .$id.','
+                    .$haplotype1.','
+                    .$functional1.','
+                    .$allele1.','
+                    .$activity1.','
+                    .$haplotype2.',' # haplotype2
+                    .$functional2.',' # functional2
+                    .$allele2.',' # allele2
+                    .$activity2.',' # activity2
+                    .'*'.',' # score 
+                    .$phenotype.','
+                    .$cnv[$id]."\n";
+                fwrite($w, $texto);
+            }
             else{
                 fwrite($w, trim($f).",2\n"); # grava a linha inteira
             }

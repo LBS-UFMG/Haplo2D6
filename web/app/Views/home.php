@@ -110,6 +110,7 @@
                   container.style.display = 'none';
                 } else {
                   container.style.display = 'block';
+                  container.value = '';
                 }
               }
 

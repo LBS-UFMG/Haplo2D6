@@ -25,7 +25,7 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   
-  <script src="<?= filtra_url(base_url('/js/main.js')) ?>"></script><!-- principal script -->
+  <!--<script src="<?= filtra_url(base_url('/js/main.js')) ?>"></script><!-- principal script -->
 
 </head>
 

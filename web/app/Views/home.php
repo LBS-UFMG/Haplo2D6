@@ -86,11 +86,11 @@
           
             <label>
               <input type="checkbox" id="defaultCheckbox" checked>
-              Use default parameters for CNV <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Copy Number Variations. The default values ​​consider two copies per gene. Change this value by entering one item per line, separated by commas. '></i>
+              Use default parameters for CNV <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Copy Number Variations. The default values ​​consider two copies per gene. Insert the ID followed by the number of copies. Change this value by entering one item per line, separated by commas. '></i>
             </label>
 
             <div id="cnv-container">
-              <label for="cnvData" class="small text-muted">Insert the CNV data (<a href="<?=base_url('/input/cnv.csv')?>">download an example file</a>) <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: AAAAA,2'></i></label><br>
+              <label for="cnvData" class="small text-muted">Insert the CNV data (<a href="<?=base_url('/input/cnv.csv')?>">download an example file</a>) <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: 1,2'></i></label><br>
               <textarea id="cnvData" name="cnvData" rows="5" class="form-control col-6"></textarea>
             </div>
 

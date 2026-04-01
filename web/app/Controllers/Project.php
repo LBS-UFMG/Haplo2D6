@@ -50,22 +50,38 @@ class Project extends BaseController
             $score = $l[10];
             $phenotype = $l[11];
 
-            // condição: se haplotype1 == haplotype2 and $cnv[haplotype2] == 1
-            if(($haplotype1 == $haplotype2)and($cnv[$haplotype1] == 1)){
+            // condição: se haplotype1 == haplotype2 and $cnv[$id] == 1
+            if(($haplotype1 == $haplotype2)and($cnv[$id] == 1)){
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','
-                    .$haplotype1.','
+                    .$haplotype1.' (Copies = 1),'
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
-                    .'Copies = '.$cnv[$haplotype1].',' # haplotype2
-                    .'-'.',' # functional2
-                    .'-'.',' # allele2
-                    .'-'.',' # activity2
-                    .$activity1.',' # score
-                    .explode('/',$phenotype)[0];
-
+                    .$haplotype2.',' # haplotype2
+                    .$functional2.',' # functional2
+                    .$allele2.',' # allele2
+                    .$activity2.',' # activity2
+                    .$activity1.',' # score 
+                    .$phenotype;
+                fwrite($w, $texto);
+            }
+            // condição: se haplotype1 == haplotype2 and $cnv[$id] > 2
+            else if(($haplotype1 == $haplotype2)and($cnv[$id] > 2)){
+                #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
+                $texto = $num.','
+                    .$id.','
+                    .$haplotype1.' (Copies = '.$cnv[$id].'),'
+                    .$functional1.','
+                    .$allele1.','
+                    .$activity1.','
+                    .$haplotype2.',' # haplotype2
+                    .$functional2.',' # functional2
+                    .$allele2.',' # allele2
+                    .$activity2.',' # activity2
+                    .$activity1*$cnv[$id].',' # score 
+                    .$phenotype;
                 fwrite($w, $texto);
             }
             else{

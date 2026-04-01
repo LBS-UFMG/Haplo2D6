@@ -32,6 +32,8 @@
     <div class="row">
       <div class="col">
         <label class="badge bg-success mb-1">A</label> <strong class="text-">Genotype data</strong>
+        <button id="btnCnv" class="btn btn-sm btn-success">Load example</button>
+
         <textarea class="form-control" placeholder="Insert the input here..." rows="5" name="input"></textarea>
         <p class="text-muted mt-2 mb-2">Paste an "inp file" here (<a href="<?=base_url('/input/input.inp')?>" target="_blank">download an example file</a>).</p>
       </div>
@@ -127,6 +129,60 @@
 <script>
   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
   const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el))
+
+  document.getElementById("btnCnv").addEventListener("click", function () {
+
+    const texto = `20
+9
+P 2617 4300 5222 6047 6816 7051 7189 7384 8381
+SSSSSSSSS
+
+
+
+1
+    C   C   C   C   C   C   G   G   C   C   C   C   G   G   G   G   G   G
+2
+    G   G   C   C   C   C   G   G   C   C   T   T   G   G   G   G   C   C
+3
+    C   C   C   C   C   C   G   G   A   A   C   C   G   G   G   G   G   G
+4
+    C   C   T   T   C   C   G   G   C   C   C   C   G   G   G   G   C   C
+5
+    C   C   C   C   T   T   G   G   C   C   T   T   G   G   G   G   C   C
+6
+    C   C   C   C   C   C   G   G   C   C   T   T   G   G   G   G   G   G
+7
+    C   C   C   C   C   C   G   G   C   C   T   T   A   A   G   G   C   C
+8
+    C   C   C   C   C   C   G   G   C   C   C   T   G   A   G   G   G   C
+9
+    C   C   C   T   C   C   G   A   C   C   C   C   G   G   G   G   G   C
+10
+    C   C   C   C   C   T   G   G   C   C   C   T   G   G   G   G   G   C
+11
+    C   G   C   T   C   C   G   G   C   C   C   T   G   G   G   G   C   C
+12
+    C   C   T   T   C   C   A   A   C   C   C   C   G   G   G   G   C   C
+13
+    C   C   C   C   C   C   G   G   C   A   C   C   G   G   G   G   G   C
+14
+    C   G   C   C   C   C   G   G   C   C   T   T   G   G   G   A   C   C
+15
+    C   C   C   T   C   C   G   A   C   C   C   T   G   G   G   G   G   C
+16
+    C   C   C   C   C   T   G   G   C   C   T   T   G   A   G   G   C   C
+17
+    C   C   T   T   C   C   G   A   C   C   C   C   G   G   G   G   C   C
+18
+    C   C   C   C   C   C   G   G   C   A   C   T   G   A   G   G   G   C
+19
+    C   G   C   C   C   C   G   G   C   C   C   T   G   G   G   G   G   C
+20
+    C   G   C   C   C   C   G   G   C   C   T   T   G   G   G   G   G   C`;
+
+    document.getElementById("cnvData").value = texto;
+});
+
 </script>
 <?= $this->endSection() ?>
 

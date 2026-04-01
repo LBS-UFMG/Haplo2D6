@@ -83,7 +83,7 @@ class Project extends BaseController
                     .'*5'.',' # allele2
                     .'0'.',' # activity2
                     .$activity1.',' # score 
-                    .Project::calculate_phenotype($activity1).',';
+                    .Project::calculate_phenotype($activity1).'<br>';
                 fwrite($w, $texto);
             }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] > 2
@@ -100,7 +100,7 @@ class Project extends BaseController
                     .$allele2.',' # allele2
                     .$activity2.',' # activity2
                     .$activity1*$cnv[$id].',' # score 
-                    .Project::calculate_phenotype($activity1*$cnv[$id]).',';
+                    .Project::calculate_phenotype($activity1*$cnv[$id]).'<br>';
                 fwrite($w, $texto);
             }
             else{

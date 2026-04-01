@@ -409,7 +409,7 @@
                             itens = itens.concat([diplotype])
 
                             let cnv2 = itens[2].includes("CNV")
-                                ? parseInt(texto.split(" = ")[1])
+                                ? parseInt(itens[2].split(" = ")[1])
                                 : 2;
                             itens = itens.concat([cnv2])
                             return itens

@@ -47,6 +47,9 @@ class Project extends BaseController
         $cnv = [];
         foreach ($cnv_file as $hp) {
             $c = explode(",", trim($hp));
+            if (count($c) == 1) {
+                $c = explode("\t", trim($hp));
+            }
             $cnv[$c[0]] = $c[1];
         }
         

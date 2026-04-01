@@ -407,12 +407,14 @@
                             itens = i.split(',')
                             diplotype = itens[4] + '/' + itens[8]
                             itens = itens.concat([diplotype])
-    console.log(itens[2],'aqiu')
+
                             let cnv2 = itens[2].includes("CNV")
                                 ? parseInt(itens[2].split(" = ")[1])
                                 : 2;
-                            console.log(itens)
+                                console.log(cnv2)
                             itens = itens.concat([cnv2])
+                            console.log(itens)
+
                             return itens
                         }),
                     pageLength: 25,

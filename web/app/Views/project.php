@@ -412,6 +412,7 @@
                                 : 2;
 
                             itens = itens.concat([diplotype, cnv2])
+                            console.log(itens)
 
                             return itens
                         }),

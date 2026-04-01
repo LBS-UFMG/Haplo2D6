@@ -106,7 +106,7 @@ class Project extends BaseController
                 fwrite($w, $texto);
             }
             else{
-                fwrite($w, trim($f)."2\n"); # grava a linha inteira
+                fwrite($w, trim($f).",2\n"); # grava a linha inteira
             }
         }
         

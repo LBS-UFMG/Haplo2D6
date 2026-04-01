@@ -408,9 +408,10 @@
                             diplotype = itens[4] + '/' + itens[8]
                             itens = itens.concat([diplotype])
 
-                            let match = itens[2].match(/CNV\s*=\s*(\d+)/i);
-                            let cnv = match ? parseInt(match[1]) : 2
-                            itens = itens.concat([cnv])
+                            let cnv2 = itens[2].includes("CNV")
+                                ? parseInt(texto.split(" = ")[1])
+                                : 2;
+                            itens = itens.concat([cnv2])
                             return itens
                         }),
                     pageLength: 25,

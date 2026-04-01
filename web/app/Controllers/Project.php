@@ -72,9 +72,6 @@ class Project extends BaseController
             $score = $l[10];
             $phenotype = $l[11];
 
-            // if($id == 'patient_id'){                
-            //     continue;
-            // }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] == 1
             if(($haplotype1 == $haplotype2)and($cnv[$id] == 1)){
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
@@ -112,7 +109,7 @@ class Project extends BaseController
                 fwrite($w, $texto);
             }
             // condição: se haplotype1 != haplotype2
-            else if(($haplotype1 != $haplotype2)and($cnv[$id] != 2)){ 
+            else if(($haplotype1 != $haplotype2)and($id != 'patient_id')and($cnv[$id] != 2)){ 
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','

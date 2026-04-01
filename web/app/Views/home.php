@@ -110,7 +110,7 @@
                   container.style.display = 'none';
                 } else {
                   container.style.display = 'block';
-                  container.value = '';
+                  document.getElementById('cnvData').value = '';
                 }
               }
 

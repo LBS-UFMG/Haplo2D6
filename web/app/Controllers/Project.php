@@ -72,9 +72,6 @@ class Project extends BaseController
             $score = $l[10];
             $phenotype = $l[11];
 
-            if($id == 'patient_id'){
-                continue;
-            }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] == 1
             if(($haplotype1 == $haplotype2)and($cnv[$id] == 1)){
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';

@@ -40,7 +40,7 @@
 
     <h1>Project created</h1>
     <h1 class="display-1" id="time">00:03</h1>
-    <p>Please, wait... redirecting...</p>
+    <p class="mb-5 pb-5">Please, wait... redirecting...</p>
 
 </div>
 

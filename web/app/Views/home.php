@@ -32,9 +32,9 @@
     <div class="row">
       <div class="col">
         <label class="badge bg-success mb-1">A</label> <strong class="text-">Genotype data</strong>
-        <button id="btnCnv" class="btn btn-sm btn-success">Load example</button>
+        <a id="btnCnv" class="btn btn-sm btn-success">Load example</a>
 
-        <textarea class="form-control" placeholder="Insert the input here..." rows="5" name="input"></textarea>
+        <textarea class="form-control" placeholder="Insert the input here..." rows="5" name="input" id="input"></textarea>
         <p class="text-muted mt-2 mb-2">Paste an "inp file" here (<a href="<?=base_url('/input/input.inp')?>" target="_blank">download an example file</a>).</p>
       </div>
       <div class="col">
@@ -180,7 +180,7 @@ SSSSSSSSS
 20
     C   G   C   C   C   C   G   G   C   C   T   T   G   G   G   G   G   C`;
 
-    document.getElementById("cnvData").value = texto;
+    document.getElementById("input").value = texto;
 });
 
 </script>

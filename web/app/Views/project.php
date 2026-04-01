@@ -108,6 +108,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
     <script>
+
+
+const url1 = '<?= filtra_url(base_url("/data/$id/final_cnv.csv")) ?>';
+const url2 = '<?= filtra_url(base_url("/data/$id/final.csv")) ?>';
+
         // Função para contar a frequência dos alelos
         function countAlleles(data) {
             const counts = {};
@@ -135,8 +140,9 @@
         }
 
         // Leitura do CSV e criação do gráfico
-
-        Papa.parse('<?= filtra_url(base_url("/data/$id/final.csv")) ?>', {
+fetch(url1)
+    .then(r => r.ok ? url1 : url2)
+    .then(url => Papa.parse(url, {
             download: true,
             header: true,
             complete: function(results) {
@@ -179,7 +185,7 @@
                     }
                 });
             }
-        });
+        }));
     </script>
 
     <script>
@@ -204,7 +210,9 @@
         }
 
         // Leitura do CSV e criação do gráfico
-        Papa.parse('<?= filtra_url(base_url("/data/$id/final.csv")) ?>', {
+        fetch(url1)
+    .then(r => r.ok ? url1 : url2)
+    .then(url => Papa.parse(url, {
             download: true,
             header: true,
             complete: function(results) {
@@ -260,7 +268,7 @@
                     }
                 });
             }
-        });
+        }));
     </script>
 
     <script>
@@ -277,7 +285,9 @@
         }
 
         // Leitura do CSV e criação do gráfico
-        Papa.parse('<?= filtra_url(base_url("/data/$id/final.csv")) ?>', {
+        fetch(url1)
+    .then(r => r.ok ? url1 : url2)
+    .then(url => Papa.parse(url, {
             download: true,
             header: true,
             complete: function(results) {
@@ -320,7 +330,7 @@
                     }
                 });
             }
-        });
+        }));
     </script>
     <script>
         // Função para contar a frequência dos valores de total_score
@@ -337,8 +347,6 @@
 
         // Leitura do CSV e criação do gráfico
 
-const url1 = '<?= filtra_url(base_url("/data/$id/final_cnv.csv")) ?>';
-const url2 = '<?= filtra_url(base_url("/data/$id/final.csv")) ?>';
 
 fetch(url1)
     .then(r => r.ok ? url1 : url2)

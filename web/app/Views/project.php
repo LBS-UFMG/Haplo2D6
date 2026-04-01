@@ -406,10 +406,8 @@
                         .map(i => {
                             itens = i.split(',')
                             diplotype = itens[4] + '/' + itens[8]
-                            let cnv2 = itens[2].includes("CNV")
-                                ? parseInt(itens[2].split(" = ")[1])
-                                : 2;
-                            itens = itens.concat([diplotype, cnv2])
+                           
+                            itens = itens.concat([diplotype])
                             return itens
                         }),
                     pageLength: 25,

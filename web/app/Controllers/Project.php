@@ -74,7 +74,7 @@ class Project extends BaseController
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','
-                    .$haplotype1.' (CNV = 1),'
+                    .$haplotype1.','
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
@@ -83,7 +83,8 @@ class Project extends BaseController
                     .'*5'.',' # allele2
                     .'0'.',' # activity2
                     .$activity1.',' # score 
-                    .Project::calculate_phenotype($activity1)."\n";
+                    .Project::calculate_phenotype($activity1).','
+                    .'1'."\n";
                 fwrite($w, $texto);
             }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] > 2
@@ -91,7 +92,7 @@ class Project extends BaseController
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','
-                    .$haplotype1.' (CNV = '.$cnv[$id].'),'
+                    .$haplotype1.','
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
@@ -100,11 +101,12 @@ class Project extends BaseController
                     .$allele2.',' # allele2
                     .$activity2.',' # activity2
                     .$activity1*$cnv[$id].',' # score 
-                    .Project::calculate_phenotype($activity1*$cnv[$id])."\n";
+                    .Project::calculate_phenotype($activity1*$cnv[$id])
+                    .$cnv[$id]."\n";
                 fwrite($w, $texto);
             }
             else{
-                fwrite($w, $f); # grava a linha inteira
+                fwrite($w, trim($f)."2\n"); # grava a linha inteira
             }
         }
         

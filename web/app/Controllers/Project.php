@@ -18,6 +18,25 @@ class Project extends BaseController
         return view('project', $dados);
     }
 
+    private function calculate_phenotype($score){
+        # gPM → poor metabolizer (metabolizador pobre)
+        # gIM → intermediate metabolizer (metabolizador intermediário)
+        # gNM → normal metabolizer (metabolizador normal)
+        # gUM → ultrarapid metabolizer (metabolizador ultrarrápido)
+        if($score == 0){
+            return 'gPM';
+        }
+        else if($score > 0 and $score < 1.25){
+            return 'gIM';
+        }
+        else if($score >= 1.25 and $score <= 2.25){
+            return 'gNM';
+        }
+        else if($score > 2.25){
+            return 'gUM';
+        }
+    }
+
     private function cnv($id){
         // esta função realiza pós-processamento para múltiplas cópias
         $arquivo = "./data/$id/final_table_cnv.csv";
@@ -55,7 +74,7 @@ class Project extends BaseController
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','
-                    .$haplotype1.' (Copies = 1),'
+                    .$haplotype1.' (CNV = 1),'
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
@@ -64,7 +83,7 @@ class Project extends BaseController
                     .'*5'.',' # allele2
                     .'0'.',' # activity2
                     .$activity1.',' # score 
-                    .$phenotype;
+                    .Project::calculate_phenotype($activity1);
                 fwrite($w, $texto);
             }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] > 2
@@ -72,7 +91,7 @@ class Project extends BaseController
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','
-                    .$haplotype1.' (Copies = '.$cnv[$id].'),'
+                    .$haplotype1.' (CNV = '.$cnv[$id].'),'
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
@@ -81,7 +100,7 @@ class Project extends BaseController
                     .$allele2.',' # allele2
                     .$activity2.',' # activity2
                     .$activity1*$cnv[$id].',' # score 
-                    .$phenotype;
+                    .Project::calculate_phenotype($activity1*$cnv[$id]);
                 fwrite($w, $texto);
             }
             else{

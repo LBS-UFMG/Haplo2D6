@@ -112,7 +112,7 @@ class Project extends BaseController
                 fwrite($w, $texto);
             }
             // condição: se haplotype1 != haplotype2
-            else if($haplotype1 != $haplotype2){
+            else if(($haplotype1 != $haplotype2)and($cnv[$id] != 2)){ 
                 #echo $haplotype1.'-'.$haplotype2.'-'.$cnv[$haplotype1].'<br>';
                 $texto = $num.','
                     .$id.','

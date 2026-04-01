@@ -73,6 +73,7 @@ class Project extends BaseController
             $phenotype = $l[11];
 
             if($id == 'patient_id'){                
+                dd($l);
                 continue;
             }
             // condição: se haplotype1 == haplotype2 and $cnv[$id] == 1

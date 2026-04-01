@@ -404,6 +404,7 @@
                             }
                         })
                         .map(i => {
+                            console.log('começo',i)
                             itens = i.split(',')
                             diplotype = itens[4] + '/' + itens[8]
 

@@ -32,15 +32,16 @@
     <div class="row">
       <div class="col">
         <label class="badge bg-success mb-1">A</label> <strong class="text-">Genotype data</strong>
-        <a id="btnCnv" class="btn btn-sm btn-success">Load example</a>
+        <a id="btnCnv" class="btn btn-sm btn-success ms-2">Load example</a>
 
         <textarea class="form-control" placeholder="Insert the input here..." rows="5" name="input" id="input"></textarea>
-        <p class="text-muted mt-2 mb-2">Paste an "inp file" here (<a href="<?=base_url('/input/input.inp')?>" target="_blank">download an example file</a>).</p>
+        <p class="text-muted mt-2 mb-2 small">Paste an "inp file" here (<a href="<?=base_url('/input/input.inp')?>" target="_blank">download an example file</a>).</p>
       </div>
       <div class="col">
         <label class="badge bg-primary mb-1">B</label> <strong class="text-">Allele reference table</strong>
-        <textarea class="form-control" placeholder="Insert the reference here..." rows="5" name="model"></textarea>
-        <p class="text-muted mt-2 mb-2">Paste a "tabular reference file" here (<a href="<?=base_url('/input/model2.csv')?>" target="_blank">download an example file</a>).</p>
+        <a id="btnAllele" class="btn btn-sm btn-primary ms-2">Load example</a>
+        <textarea class="form-control" placeholder="Insert the reference here..." rows="5" name="model" id="model"></textarea>
+        <p class="text-muted mt-2 mb-2 small">Paste a "tabular reference file" here (<a href="<?=base_url('/input/model2.csv')?>" target="_blank">download an example file</a>).</p>
         </div>
     </div>
 
@@ -92,8 +93,12 @@
             </label>
 
             <div id="cnv-container">
+              <a id="btnCnvLoad" class="btn btn-sm btn-dark ms-2">Load example</a>
+
+              <textarea id="cnvData" name="cnvData" id="cnvData" rows="5" class="form-control col-6"></textarea>
+
               <label for="cnvData" class="small text-muted">Insert the CNV data (<a href="<?=base_url('/input/cnv.csv')?>">download an example file</a>) <i class="bi bi-question-circle-fill" data-bs-toggle="tooltip" data-bs-title='Example: 1,2'></i></label><br>
-              <textarea id="cnvData" name="cnvData" rows="5" class="form-control col-6"></textarea>
+
             </div>
 
             <script>
@@ -182,6 +187,54 @@ SSSSSSSSS
 
     document.getElementById("input").value = texto;
 });
+
+  document.getElementById("btnAllele").addEventListener("click", function () {
+
+    const texto2 = `CCCGCCGGG,Normal,*1,1
+GCCGCTGGC,Normal,*2A,1
+CCCGCTGGC,Normal,*2B,1
+CTCACCGGC,No function,*4A,0
+CTCACCGGG,No function,*4J,0
+CTCACTGGC,No function,*4K,0
+CCCGACGGG,Decreased,*9,0.25
+CTCGCCGGC,Decreased,*10,0.25
+CCTGCTGGC,Decreased,*17,0.5
+CCCGCTGAC,Decreased,*29,0.5
+CCCGCTGGG,Normal,*34,1
+CCCGCCGGC,Normal,*39,1
+CCCGCTAGC,Decreased,*41,0.25`;
+
+    document.getElementById("model").value = texto2;
+});
+
+
+document.getElementById("btnCnvLoad").addEventListener("click", function () {
+
+    const texto3 = `1,1
+2,1
+3,1
+4,1
+5,1
+6,1
+7,1
+8,1
+9,1
+10,1
+11,1
+12,1
+13,1
+14,1
+15,1
+16,1
+17,1
+18,1
+19,1
+20,1`;
+
+    document.getElementById("cnvData").value = texto3;
+});
+
+
 
 </script>
 <?= $this->endSection() ?>

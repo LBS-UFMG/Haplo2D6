@@ -142,6 +142,7 @@ const url2 = '<?= filtra_url(base_url("/data/$id/final.csv")) ?>';
         // Leitura do CSV e criação do gráfico
 fetch(url1)
     .then(r => r.ok ? url1 : url2)
+    .then(console.log(r))
     .then(url => Papa.parse(url, {
             download: true,
             header: true,

@@ -408,7 +408,7 @@
                             diplotype = itens[4] + '/' + itens[8]
                             itens = itens.concat([diplotype])
 
-                            let match = itens[2].match(/CNV\s*=\s*(\d+)/)
+                            let match = itens[2].match(/CNV\s*=\s*(\d+)/i);
                             let cnv = match ? parseInt(match[1]) : 2
                             itens = itens.concat([cnv])
                             return itens

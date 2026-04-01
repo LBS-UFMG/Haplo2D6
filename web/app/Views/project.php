@@ -408,8 +408,9 @@
                             diplotype = itens[4] + '/' + itens[8]
 
                             let cnv2 = itens[2].includes("CNV")
-                                ? itens[2].split(" = ")[1]
+                                ? toInteger(itens[2].split(" = ")[1])
                                 : 2;
+                                console.log('iteins: ', itens, 'cnv', cnv2, 'dip', diplotype)
 
                             itens = itens.concat([diplotype, cnv2])
                             console.log(itens)

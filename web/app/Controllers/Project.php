@@ -39,7 +39,7 @@ class Project extends BaseController
 
     private function cnv($id){
         // esta função realiza pós-processamento para múltiplas cópias
-        $arquivo = "./data/$id/final_table_cnv.csv";
+        $arquivo = "./data/$id/final_cnv.csv";
         $w = fopen($arquivo, "w");
 
         // le arquivo cnv

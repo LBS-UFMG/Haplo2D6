@@ -336,7 +336,13 @@
         }
 
         // Leitura do CSV e criação do gráfico
-        Papa.parse('<?= filtra_url(base_url("/data/$id/final.csv")) ?>', {
+
+const url1 = '<?= filtra_url(base_url("/data/$id/final_cnv.csv")) ?>';
+const url2 = '<?= filtra_url(base_url("/data/$id/final.csv")) ?>';
+
+fetch(url1)
+    .then(r => r.ok ? url1 : url2)
+    .then(url => Papa.parse(url, {
             download: true,
             header: true,
             complete: function(results) {
@@ -379,7 +385,8 @@
                     }
                 });
             }
-        });
+        })
+);
     </script>
 
     <!-- fim/gráficos -->
@@ -389,7 +396,7 @@
 <script>
     $(() => {
 
-        const url1 = '<?= filtra_url(base_url("/data/$id/final_table_cnv.csv")) ?>';
+        const url1 = '<?= filtra_url(base_url("/data/$id/final_cnv.csv")) ?>';
         const url2 = '<?= filtra_url(base_url("/data/$id/final.csv")) ?>';
 
         fetch(url1)

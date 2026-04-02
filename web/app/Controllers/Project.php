@@ -99,9 +99,10 @@ class Project extends BaseController
                     .$functional1.','
                     .$allele1.','
                     .$activity1.','
-                    .$haplotype2.'xN,' # haplotype2
+                    .$haplotype2.',' # haplotype2
                     .$functional2.',' # functional2
-                    .$allele2.',' # allele2
+                    .$allele2.'xN,' # allele2
+                    .$activity2.',' # activity 2
                     .$activity1*$cnv[$id].',' # score 
                     .Project::calculate_phenotype($activity1*$cnv[$id]).','
                     .$cnv[$id]."\n";

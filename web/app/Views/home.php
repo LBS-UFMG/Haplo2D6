@@ -138,7 +138,33 @@
 
   document.getElementById("btnCnv").addEventListener("click", function () {
 
-    const texto = `20
+    const texto = `20																								
+12																								
+P 2617 4300 4300 5222 5908 6047 6750 6816 7051 7189 7384 8381																								
+SSSSSSSSSSSS																								
+																								
+1	C	C	C	C	C	T	C	C	A	A	G	G	T	T	C	C	C	C	G	G	G	G	G	C
+2	C	G	C	C	C	C	C	C	A	A	G	G	T	T	C	C	C	T	G	G	G	G	G	C
+3	C	C	C	C	C	T	C	C	A	A	G	A	T	T	C	C	C	C	G	G	G	G	G	C
+4	C	G	C	C	C	C	C	T	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+5	C	C	C	C	C	C	T	T	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+6	C	C	C	C	C	T	C	C	A	A	G	A	T	T	C	C	C	T	G	A	G	G	C	C
+7	C	G	C	C	C	C	C	C	A	C	G	G	T	T	C	C	C	T	G	G	G	G	G	C
+8	C	C	C	C	C	C	C	C	A	A	G	G	T	T	C	C	C	C	G	G	G	G	G	G
+9	C	G	C	T	C	C	C	T	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+10	G	G	C	C	C	C	C	C	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+11	G	G	T	T	C	C	C	C	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+12	C	C	C	C	C	C	C	C	A	C	G	G	T	T	C	C	C	C	G	G	G	G	G	G
+13	C	C	C	C	C	C	C	C	A	A	G	G	T	T	C	C	T	T	A	A	G	G	C	C
+14	C	C	C	C	C	C	C	C	A	A	G	G	T	A	C	C	C	C	G	G	G	G	G	G
+15	G	G	C	C	C	C	C	C	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+16	C	G	C	C	C	T	C	C	A	A	G	G	T	T	C	C	C	T	G	G	G	G	C	C
+17	C	G	C	T	C	C	C	C	A	A	G	G	T	T	C	C	C	T	G	G	G	G	G	C
+18	G	G	C	C	C	C	C	C	A	A	G	G	T	T	C	C	T	T	G	G	G	G	C	C
+19	C	C	C	C	T	T	C	C	A	A	A	A	T	T	C	C	C	C	G	G	G	G	C	C
+20	C	C	C	C	C	T	C	C	A	C	G	A	T	T	C	C	C	C	G	G	G	G	G	C`
+    
+const texto_v2 = `20
 9
 P 2617 4300 5222 6047 6816 7051 7189 7384 8381
 SSSSSSSSS
@@ -191,19 +217,16 @@ SSSSSSSSS
 
   document.getElementById("btnAllele").addEventListener("click", function () {
 
-    const texto2 = `CCCGCCGGG,Normal,*1,1
-GCCGCTGGC,Normal,*2A,1
-CCCGCTGGC,Normal,*2B,1
-CTCACCGGC,No function,*4A,0
-CTCACCGGG,No function,*4J,0
-CTCACTGGC,No function,*4K,0
-CCCGACGGG,Decreased,*9,0.25
-CTCGCCGGC,Decreased,*10,0.25
-CCTGCTGGC,Decreased,*17,0.5
-CCCGCTGAC,Decreased,*29,0.5
-CCCGCTGGG,Normal,*34,1
-CCCGCCGGC,Normal,*39,1
-CCCGCTAGC,Decreased,*41,0.25`;
+    const texto2 = `CCCCAGTCCGGG,Normal,*1,1
+GCCCAGTCTGGC,Normal,*2,1
+CCCCAGACCGGG,No function,*3,0
+CCTCAATCCGGC,No function,*4,0
+CCCCCGTCCGGG,No function,*6,0
+CCCCAGTACGGG,Decreased,*9,0.25
+CCTCAGTCCGGC,Decreased,*10,0.25
+CCCTAGTCTGGC,Decreased,*17,0.5
+GTCCAGTCTGGC,Normal,*35,1
+CCCCAGTCTAGC,Decreased,*41,0.25`;
 
     document.getElementById("model").value = texto2;
 });
@@ -211,26 +234,26 @@ CCCGCTAGC,Decreased,*41,0.25`;
 
 document.getElementById("btnCnvLoad").addEventListener("click", function () {
 
-    const texto3 = `1,1
-2,1
-3,1
-4,1
-5,1
-6,1
-7,1
-8,1
-9,1
+    const texto3 = `1,2
+2,2
+3,2
+4,2
+5,2
+6,2
+7,2
+8,2
+9,2
 10,1
-11,1
-12,1
-13,1
-14,1
-15,1
-16,1
-17,1
+11,3
+12,2
+13,2
+14,2
+15,2
+16,2
+17,2
 18,1
-19,1
-20,1`;
+19,2
+20,2`;
 
     document.getElementById("cnvData").value = texto3;
 });

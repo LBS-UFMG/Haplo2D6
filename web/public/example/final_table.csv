@@ -1,4 +1,4 @@
-,patient_id,1_haplotype,1_enzymatic_activity,1_allele,1_score,2_haplotype,2_enzymatic_activity,2_allele,2_score,total_score,phenotype
+#,ID,Haplotype #1,Allele Functional #1,Allele #1,Activity Value #1,Haplotype #2,Allele Functional #2,Allele #2,Activity Value #2,Activity Score,Phenotype
 0,1,CCCCAGTCCGGG,Normal,*1,1.0,CCTCAGTCCGGC,Decreased,*10,0.25,1.25,gNM
 1,10,GCCCAGTCTGGC,Normal,*2,1.0,GCCCAGTCTGGC,Normal,*2,1.0,2.0,gNM
 2,11,GTCCAGTCTGGC,Normal,*35,1.0,GTCCAGTCTGGC,Normal,*35,1.0,2.0,gNM

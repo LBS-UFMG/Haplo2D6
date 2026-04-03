@@ -60,6 +60,7 @@
             <p class="text-muted">Download files:</p>
             <ul>
                 <li><a href="<?= filtra_url(base_url('/data/' . $id . '/final_table.csv')) ?>">final_table.csv</a></li>
+                <li><a href="<?= filtra_url(base_url('/data/' . $id . '/final_cnv.csv')) ?>">final_cnv.csv</a></li>
 
                 <li><a href="<?= filtra_url(base_url('/data/' . $id . '/halelos.csv')) ?>">haplotypes.csv</a></li>
                 <!--<li><a href="<?= filtra_url(base_url('/data/' . $id . '/pacientes.csv')) ?>">pacientes.csv</a></li>

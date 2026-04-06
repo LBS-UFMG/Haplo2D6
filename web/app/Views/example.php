@@ -236,7 +236,15 @@ if ("undefined/undefined" in counts) {
                             }
                         },
                         y: {
-                            grid: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1, // força incrementos inteiros
+                                callback: function(value) {
+                                    if (Number.isInteger(value)) {
+                                        return value;
+                                    }
+                                }
+                            },grid: {
                                 display: false // Remove as linhas de grade do eixo y
                             }
                         }

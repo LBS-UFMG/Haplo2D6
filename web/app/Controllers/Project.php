@@ -126,6 +126,9 @@ class Project extends BaseController
                     .$cnv[$id]."\n";
                 fwrite($w, $texto);
             }
+            else if($id == 'patient_id'){ 
+                fwrite($w, trim($f).",CNV\n"); # grava a linha inteira
+            }
             else{
                 fwrite($w, trim($f).",2\n"); # grava a linha inteira
             }

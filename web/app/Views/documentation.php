@@ -11,7 +11,7 @@
 
     <h1 class="mt-5 mb-4">Haplo2D6 documentation</h1>
 
-    <p><a href="<?= base_url('/docs/Documentation_Haplo2D6.pdf') ?>">Click here</a> to download the complete documentation.</p>
+    <p><a href="<?= base_url('/docs/Documentation_Haplo2D6_v1.1.pdf') ?>">Click here</a> to download the complete documentation.</p>
 
     <h2 class="text-muted mb-3 mt-3">What is Haplo2D6?</h2>
 

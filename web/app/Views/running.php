@@ -19,7 +19,7 @@
             onde.textContent = minutes + ":" + seconds;
             if (--timer < 0) {
                 timer = 0;
-                window.location.href = "<?=base_url('/index.php/project/'.$id)?>";
+                window.location.href = "<?=base_url('project/'.$id)?>";
             }
         }, 1000);
     }

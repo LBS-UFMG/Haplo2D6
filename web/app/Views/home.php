@@ -17,7 +17,7 @@
         <p class="lead"><b>Haplo2D6</b> is a specialized bioinformatics tool that automates the analysis of CYP2D6 phenotype prediction based on user-provided genotyping data and reference information. The tool predicts haplotypes using the PHASE algorithm and then interprets the data to predict the CYP2D6 phenotype, offering an efficient and reliable solution for researchers and clinicians studying CYP2D6 polymorphisms.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a href="#try" class="btn btn-success btn-lg px-4 me-md-2">Run</a>
-          <a href="<?=base_url('/index.php/documentation')?>" class="btn btn-outline-secondary btn-lg px-4">Documentation</a>
+          <a href="<?=base_url('documentation')?>" class="btn btn-outline-secondary btn-lg px-4">Documentation</a>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
   <div class="row bg-light mt-5 px-2" id="try">
   <h2 class="mt-4 pt-4 pb-3 text-muted mb-2">Run Haplo2D6</h2>
 
-  <form action="<?= base_url('index.php/run') ?>" method="post">
+  <form action="<?= base_url('run') ?>" method="post">
     <label class="badge bg-dark mb-1">Try now:</label>
     <div class="row">
       <div class="col">

@@ -53,8 +53,8 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li><a href="#" class="nav-link px-3 link-secondary" data-bs-target="#about" data-bs-toggle="modal"><span>About</span></a></li>
             
-            <li><a href="<?= base_url('/index.php/documentation') ?>" class="nav-link px-3 link-secondary"><span>Documentation</span></a></li>
-            <li><a href="<?= base_url('/index.php/example') ?>" class="nav-link px-3 link-secondary"><span>Example</span></a></li>
+            <li><a href="<?= base_url('documentation') ?>" class="nav-link px-3 link-secondary"><span>Documentation</span></a></li>
+            <li><a href="<?= base_url('example') ?>" class="nav-link px-3 link-secondary"><span>Example</span></a></li>
             <li><a href="<?= base_url('/#try') ?>" class="nav-link px-3 link-secondary"><span><strong>Try now</strong></span></a></li>
             
           </ul><!-- /menu -->

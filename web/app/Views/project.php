@@ -14,7 +14,7 @@
 
     <div class="text-center text-muted my-5">
 
-        <div class="alert alert-info small">This is project ID <a href="<?= base_url('index.php/project/' . $id) ?>"><?= $id ?></a>. When processing is complete, this page will automatically refresh.</div>
+        <div class="alert alert-info small">This is project ID <a href="<?= base_url('project/' . $id) ?>"><?= $id ?></a>. When processing is complete, this page will automatically refresh.</div>
 
         <h1 class="mt-5 pt-5">PHASE is running...</h1>
         <p class="mb-5">This page will be updated every 60 seconds. Please, wait...</p>

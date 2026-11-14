@@ -44,20 +44,20 @@
     <div class="col-12 col-md-3 p-4 bg-light">
         <p class="text-muted">Download files:</p>
         <ul>
-            <li><a href="<?= filtra_url(base_url('/example/final_table.csv')) ?>">final_table.csv</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/final_cnv.csv')) ?>">final_cnv.csv</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/final_table.csv')) ?>">final_table.csv</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/final_cnv.csv')) ?>">final_cnv.csv</a></li>
 
 
-            <li><a href="<?= filtra_url(base_url('/example/halelos.csv')) ?>">haplotypes.csv</a></li>
-<!--            <li><a href="<?= filtra_url(base_url('/example/pacientes.csv')) ?>">pacientes.csv</a></li>
-    -->        <li><a href="<?= filtra_url(base_url('/example/output')) ?>">output</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/output_freqs')) ?>">output_freqs</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/output_hbg')) ?>">output_hbg</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/output_monitor')) ?>">output_monitor</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/output_pairs')) ?>">output_pairs</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/output_probs')) ?>">output_probs</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/output_recom')) ?>">output_recom</a></li>
-            <li><a href="<?= filtra_url(base_url('/example/log.txt')) ?>">log.txt</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/halelos.csv')) ?>">haplotypes.csv</a></li>
+<!--            <li><a href="<?= filtra_url(base_url('/example_data/pacientes.csv')) ?>">pacientes.csv</a></li>
+    -->        <li><a href="<?= filtra_url(base_url('/example_data/output')) ?>">output</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/output_freqs')) ?>">output_freqs</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/output_hbg')) ?>">output_hbg</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/output_monitor')) ?>">output_monitor</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/output_pairs')) ?>">output_pairs</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/output_probs')) ?>">output_probs</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/output_recom')) ?>">output_recom</a></li>
+            <li><a href="<?= filtra_url(base_url('/example_data/log.txt')) ?>">log.txt</a></li>
         </ul>
     </div>
 </div>
@@ -121,7 +121,7 @@ function countAlleles(data) {
 }
 
 // Leitura do CSV e criação do gráfico
-Papa.parse('<?= filtra_url(base_url("/example/final_cnv.csv")) ?>', {
+Papa.parse('<?= filtra_url(base_url("/example_data/final_cnv.csv")) ?>', {
     download: true,
     header: true,
     complete: function(results) {
@@ -190,7 +190,7 @@ if ("undefined/undefined" in counts) {
     }
 
     // Leitura do CSV e criação do gráfico
-    Papa.parse('<?= filtra_url(base_url("/example/final_cnv.csv")) ?>', {
+    Papa.parse('<?= filtra_url(base_url("/example_data/final_cnv.csv")) ?>', {
         download: true,
         header: true,
         complete: function(results) {
@@ -269,7 +269,7 @@ if ("undefined/undefined" in counts) {
     }
 
     // Leitura do CSV e criação do gráfico
-    Papa.parse('<?= filtra_url(base_url("/example/final_cnv.csv")) ?>', {
+    Papa.parse('<?= filtra_url(base_url("/example_data/final_cnv.csv")) ?>', {
         download: true,
         header: true,
         complete: function(results) {
@@ -326,7 +326,7 @@ if ("undefined/undefined" in counts) {
     }
 
     // Leitura do CSV e criação do gráfico
-    Papa.parse('<?= filtra_url(base_url("/example/final_cnv.csv")) ?>', {
+    Papa.parse('<?= filtra_url(base_url("/example_data/final_cnv.csv")) ?>', {
         download: true,
         header: true,
         complete: function(results) {
@@ -376,7 +376,7 @@ if ("undefined/undefined" in counts) {
 
 <script>
     $(() => {
-        fetch('<?= filtra_url(base_url("/example/final_cnv.csv")) ?>')
+        fetch('<?= filtra_url(base_url("/example_data/final_cnv.csv")) ?>')
             .then(response => response.text())
             .then(dados => {
 
